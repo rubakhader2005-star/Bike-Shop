@@ -1,0 +1,230 @@
+.nav-scrolled {
+  background-color: #0000;
+  backdrop-filter: blur(10px);
+}
+
+#cookieBar i {
+  animation: cookie-wiggle 3s ease-in-out infinite;
+}
+
+@keyframes cookie-wiggle {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(8deg);
+  }
+}
+
+.chat-rotate {
+  transform: rotate(180deg);
+  transition: transform 0.3s ease;
+}
+
+.marquee {
+  overflow: hidden;
+  white-space: nowrap;
+}
+.marquee__track {
+  display: inline-flex;
+  gap: 4rem;
+  animation: marqueeLeft 22s linear infinite;
+  will-change: transform;
+}
+.marquee__text {
+  font-size: clamp(64px, 9vw, 140px);
+  font-weight: 900;
+  letter-spacing: 0.06em;
+  color: transparent;
+  -webkit-text-stroke: 2px rgba(255, 255, 255, 0.16);
+  text-stroke: 2px rgba(255, 255, 255, 0.16);
+  text-transform: uppercase;
+}
+@keyframes marqueeLeft {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+.icon-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 9999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.55);
+  color: #fff;
+  transition: all 0.25s ease;
+  backdrop-filter: blur(6px);
+}
+.icon-btn:hover {
+  background: #fff;
+  color: #ff6900;
+  transform: translateY(-1px);
+}
+.tooltip {
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% + 10px);
+  transform: translateX(-50%) translateY(6px);
+  background: #fff;
+  color: #ff6900;
+  padding: 8px 12px;
+  border-radius: 9999px;
+  font-size: 12px;
+  font-weight: 800;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.2s ease;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+}
+.tooltip::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 100%;
+  transform: translateX(-50%);
+  border: 7px solid transparent;
+  border-top-color: #fff;
+}
+.relative:hover > .tooltip {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+.title-marquee {
+  overflow: hidden;
+  white-space: nowrap;
+}
+.title-marquee__track {
+  display: inline-flex;
+  gap: 3rem;
+  animation: titleMarqueeLeft 22s linear infinite;
+  will-change: transform;
+}
+.title-marquee__text {
+  font-size: clamp(78px, 9vw, 160px);
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+
+  /* Outline style like the screenshot */
+  color: transparent;
+  -webkit-text-stroke: 2px rgba(255, 255, 255, 0.14);
+  text-stroke: 2px rgba(255, 255, 255, 0.1);
+}
+
+@keyframes titleMarqueeLeft {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* ===== CARD 1: MINI MARQUEE UNDER IMAGE ===== */
+.product-marquee {
+  overflow: hidden;
+}
+.product-marquee__track {
+  display: flex;
+  gap: 2rem;
+  width: max-content;
+  animation: productMarquee 12s linear infinite;
+  will-change: transform;
+}
+.product-marquee__text {
+  white-space: nowrap;
+  font-weight: 800;
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+@keyframes productMarquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* ===== ICON BUTTONS + TOOLTIP (if you don't already have them) ===== */
+.icon-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 9999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  transition: 0.25s ease;
+  backdrop-filter: blur(6px);
+}
+.icon-btn:hover {
+  background: #fff;
+  color: #ff6900;
+}
+
+.tooltip {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: calc(100% + 10px);
+  background: #fff;
+  color: #ff6900;
+  font-weight: 800;
+  font-size: 12px;
+  padding: 6px 10px;
+  border-radius: 9999px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.2s ease;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+.tooltip::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 100%;
+  border: 7px solid transparent;
+  border-top-color: #fff;
+}
+.relative:hover > .tooltip {
+  opacity: 1;
+}
+
+/* arrows styles exactly like screenshot vibe */
+.tArrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 60px;
+  border-radius: 9999px;
+  color: rgba(255, 255, 255, 0.712);
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease,
+    opacity 0.2s ease;
+}
+.tArrow:hover {
+  color: #ff6900;
+}
+.tArrow--disabled {
+  opacity: 0.35;
+  color: rgba(255, 255, 255, 0.737);
+}
+.tArrow--disabled:hover {
+  color: #ff6900;
+}

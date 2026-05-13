@@ -1,0 +1,2396 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Services- Bike Shop</title>
+    <!-- Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="../CSS/style.css" />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              poppins: ["Poppins", "sans-serif"],
+            },
+            screens: {
+              s700: "700px",
+            },
+          },
+        },
+      };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+
+  <body class="bg-[#000000] text-white">
+    <header id="siteHeader" class="fixed left-0 w-full z-[60]">
+      <!--TOP BAR-->
+      <div
+        class="hidden 2xl:flex xl:flex lg:flex md:flex sm:flex bg-[#262626] justify-between items-center lg:px-6"
+      >
+        <img
+          src="../assets/imgs/logo.svg"
+          alt="Logo"
+          width="170"
+          class="py-4"
+        />
+
+        <p class="text-white">
+          Limited time offer, Buy XTRA WordPress theme only
+          <span class="font-bold">$39</span>
+        </p>
+
+        <button
+          class="bg-[#82B440] px-5 py-1 rounded-sm text-black size-fit cursor-pointer"
+        >
+          Download XTRA Theme
+        </button>
+      </div>
+
+      <!-- NAVBAR -->
+      <div
+        id="navWrapper"
+        class="bg-[#0b0b0b] transition-all duration-300 mt-[-60px] 2xl:mt-[-10px] xl:mt-[-10px] lg:mt-[-10px] md:mt-[-10px] sm:mt-[-10px]"
+      >
+        <div
+          id="mainNav"
+          class="mx-auto w-full flex justify-between items-center px-6 lg:px-10 py-7"
+        >
+          <!-- LOGO -->
+          <img
+            src="../assets/imgs/bike-logo.png"
+            alt="bike-logo"
+            width="100px"
+            height="100px"
+            class="w-[70px] sm:w-[85px] lg:w-[100px] h-auto"
+          />
+
+          <!-- Mobile Menu Button -->
+          <button
+            id="menuBtn"
+            class="absolute right-30 sm:right-80 lg:hidden w-11 h-11 rounded-full bg-[#171717]/80 text-white flex items-center justify-center hover:text-orange-500 transition"
+            aria-label="Open menu"
+          >
+            <i class="fa-solid fa-bars text-lg"></i>
+          </button>
+
+          <!-- MOBILE MENU OVERLAY -->
+          <div
+            id="menuOverlay"
+            class="fixed inset-0 bg-black/60 backdrop-blur-sm opacity-0 pointer-events-none transition-all duration-300 z-[80]"
+          ></div>
+
+          <!-- MOBILE MENU PANEL (Right -> Left) -->
+          <aside
+            id="mobileMenu"
+            class="fixed top-0 right-0 h-screen w-[85%] max-w-[360px] bg-cover bg-center bg-no-repeat z-[90] translate-x-full transition-transform duration-300 will-change-transform shadow-2xl"
+            style="background-image: url(../assets/imgs/post1-1.jpg)"
+          >
+            <div class="absolute inset-0 bg-black/70 pointer-events-none"></div>
+
+            <!-- Top bar inside menu -->
+            <div
+              class="flex items-center justify-between px-5 py-5 border-b border-white/10 relative z-10"
+            >
+              <img
+                src="../assets/imgs/bike-logo.png"
+                alt="logo"
+                class="w-20 h-auto"
+              />
+
+              <!-- Close Button -->
+              <button
+                id="closeBtn"
+                class="w-11 h-11 rounded-full bg-white/10 text-white flex items-center justify-center transition-transform duration-300 hover:bg-white hover:text-orange-500"
+                aria-label="Close menu"
+              >
+                <i class="fa-solid fa-xmark text-xl"></i>
+              </button>
+            </div>
+
+            <!-- Menu links -->
+            <nav class="px-5 py-6 relative z-10">
+              <ul class="space-y-4 text-gray-200 font-medium">
+                <li>
+                  <a
+                    class="block py-2 hover:text-orange-500 transition"
+                    href="../index.html"
+                    >Home</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="block py-2 hover:text-orange-500 transition"
+                    href="about.html"
+                    >About</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="block py-2 hover:text-orange-500 transition"
+                    href="services.html"
+                    >Services</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="block py-2 hover:text-orange-500 transition"
+                    href="../pages/blog.html"
+                    >Blog</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="block py-2 hover:text-orange-500 transition"
+                    href="../pages/shop.html"
+                    >Shop</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="block py-2 hover:text-orange-500 transition"
+                    href="../pages/FQA.html"
+                    >FAQ</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="block py-2 hover:text-orange-500 transition"
+                    href="../pages/contact.html"
+                    >Contact</a
+                  >
+                </li>
+              </ul>
+
+              <!-- Actions -->
+              <div class="mt-8 flex gap-3">
+                <button
+                  class="flex-1 text-white bg-[#ff6900] hover:bg-white hover:text-orange-500 rounded-full py-2 font-bold transition"
+                >
+                  Help & Service
+                </button>
+                <button
+                  class="w-12 h-12 rounded-full bg-[#171717]/80 text-white hover:text-orange-500 transition flex items-center justify-center"
+                  aria-label="Wishlist"
+                >
+                  <i class="fa-regular fa-heart"></i>
+                </button>
+                <button
+                  class="w-12 h-12 rounded-full bg-[#171717]/80 text-white hover:text-orange-500 transition flex items-center justify-center"
+                  aria-label="Cart"
+                >
+                  <i class="fa-solid fa-cart-arrow-down"></i>
+                </button>
+              </div>
+            </nav>
+          </aside>
+
+          <!-- Nav Links -->
+          <ul
+            class="hidden lg:flex items-center gap-8 font-medium text-gray-400"
+          >
+            <!-- Home  -->
+            <li class="relative group">
+              <a
+                href="../index.html"
+                class="px-2 group-hover:text-white transition"
+              >
+                Home
+              </a>
+
+              <span
+                class="absolute -bottom-3 left-1/2 -translate-x-1/2 w-0 h-0 opacity-0 border-l-[6px] border-r-[6px] border-l-transparent border-r-transparent border-b-[6px] border-b-[#ff6900] group-hover:opacity-100 transition"
+              ></span>
+            </li>
+
+            <!-- About -->
+            <li class="relative group">
+              <!-- About Link -->
+              <a
+                href="about.html"
+                class="px-2 flex items-center gap-1 text-gray-400 group-hover:text-white transition"
+              >
+                About
+                <!-- Font Awesome arrow -->
+                <i
+                  class="fa-solid fa-chevron-down text-xs transition-transform duration-300 group-hover:rotate-180"
+                ></i>
+              </a>
+
+              <!-- Arrow ▲ under link -->
+              <span
+                class="absolute -bottom-3 left-1/2 -translate-x-1/2 w-0 h-0 opacity-0 border-l-[6px] border-r-[6px] border-l-transparent border-r-transparent border-b-[6px] border-b-[#ff6900] group-hover:opacity-100 transition"
+              ></span>
+
+              <!-- DROPDOWN -->
+              <div
+                class="absolute top-full left-1/2 -translate-x-1/2 mt-4 w-44 bg-[#ff6900] rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300"
+              >
+                <ul class="py-3 text-white text-sm font-medium">
+                  <li class="px-5 py-2 hover:text-black cursor-pointer">
+                    Submenu 1
+                  </li>
+                  <li class="px-5 py-2 hover:text-black cursor-pointer">
+                    Dropdown menu
+                    <i
+                      class="fa-solid fa-chevron-right transition-transform duration-300"
+                    ></i>
+                  </li>
+                  <li class="px-5 py-2 hover:text-black cursor-pointer">
+                    Submenu 2
+                  </li>
+                </ul>
+              </div>
+            </li>
+
+            <!-- Services -->
+            <li class="relative group">
+              <a
+                href="services.html"
+                class="px-2 group-hover:text-white transition"
+              >
+                Services
+              </a>
+
+              <span
+                class="absolute -bottom-3 left-1/2 -translate-x-1/2 w-0 h-0 opacity-0 border-l-[6px] border-r-[6px] border-l-transparent border-r-transparent border-b-[6px] border-b-[#ff6900] group-hover:opacity-100 transition"
+              ></span>
+            </li>
+
+            <!-- Blog -->
+            <li class="relative group">
+              <a href="../pages/blog.html" class="px-2 text-white"> Blog </a>
+              <span
+                class="absolute -bottom-3 left-1/2 -translate-x-1/2 w-0 h-0 border-l-[6px] border-r-[6px] border-l-transparent border-r-transparent border-b-[6px] border-b-[#ff6900]"
+              ></span>
+            </li>
+
+            <li class="relative group">
+              <a
+                href="../pages/shop.html"
+                class="px-2 group-hover:text-white transition"
+              >
+                Shop
+              </a>
+
+              <span
+                class="absolute -bottom-3 left-1/2 -translate-x-1/2 w-0 h-0 opacity-0 border-l-[6px] border-r-[6px] border-l-transparent border-r-transparent border-b-[6px] border-b-[#ff6900] group-hover:opacity-100 transition"
+              ></span>
+            </li>
+
+            <!-- FAQ -->
+            <li class="relative group">
+              <a
+                href="../pages/FQA.html"
+                class="px-2 group-hover:text-white transition"
+              >
+                FAQ
+              </a>
+
+              <span
+                class="absolute -bottom-3 left-1/2 -translate-x-1/2 w-0 h-0 opacity-0 border-l-[6px] border-r-[6px] border-l-transparent border-r-transparent border-b-[6px] border-b-[#ff6900] group-hover:opacity-100 transition"
+              ></span>
+            </li>
+
+            <!-- Contact -->
+            <li class="relative group">
+              <a
+                href="../pages/contact.html"
+                class="px-2 group-hover:text-white transition"
+              >
+                Contact
+              </a>
+
+              <span
+                class="absolute -bottom-3 left-1/2 -translate-x-1/2 w-0 h-0 opacity-0 border-l-[6px] border-r-[6px] border-l-transparent border-r-transparent border-b-[6px] border-b-[#ff6900] group-hover:opacity-100 transition"
+              ></span>
+            </li>
+          </ul>
+
+          <div class="flex items-center gap-2 sm:gap-3">
+            <!-- Button -->
+            <button
+              class="hidden sm:inline-flex items-center text-white bg-[#ff6900] hover:bg-white hover:text-orange-500 rounded-full px-5 lg:px-7 py-1 font-bold cursor-pointer transition"
+            >
+              <i
+                class="fas fa-bicycle cz_btn_header_icon_before"
+                aria-hidden="true"
+              ></i>
+              Help & Service
+            </button>
+
+            <!-- WhishList-->
+            <div
+              class="relative w-10 h-10 lg:w-12 lg:h-12 bg-[#171717]/80 rounded-full flex items-center justify-center text-white hover:text-orange-600 cursor-pointer transition"
+            >
+              <i class="fa-regular fa-heart"></i>
+
+              <!-- Counter -->
+              <span
+                class="absolute -top-1 -right-1 w-4 h-4 lg:w-5 lg:h-5 bg-[#ff6900] text-white text-[10px] lg:text-xs font-bold rounded-full flex items-center justify-center"
+              >
+                0
+              </span>
+            </div>
+
+            <!-- Cart -->
+            <div
+              class="relative w-10 h-10 lg:w-12 lg:h-12 bg-[#171717]/80 rounded-full flex items-center justify-center text-white hover:text-orange-600 cursor-pointer transition"
+            >
+              <i class="fa-solid fa-cart-arrow-down"></i>
+
+              <!-- Counter -->
+              <span
+                class="absolute -top-1 -right-1 w-4 h-4 lg:w-5 lg:h-5 bg-[#ff6900] text-white text-[10px] lg:text-xs font-bold rounded-full flex items-center justify-center"
+              >
+                0
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div id="headerSpacer"></div>
+
+    <!-- BLOG SECTION -->
+    <section class="bg-black text-white py-14">
+      <div class="mx-auto max-w-7xl px-6">
+        <!-- GRID: left posts + right sidebar -->
+        <div class="grid gap-10 lg:grid-cols-12 lg:items-start">
+          <!-- LEFT COLUMN (dynamic: list -> details) -->
+          <div class="lg:col-span-8">
+            <!-- LIST VIEW -->
+            <div id="listView" class="space-y-10">
+              <!-- WRAP for pagination scrollIntoView -->
+              <div id="postsWrap"></div>
+
+              <!-- Post 1 -->
+              <article class="post-card group" data-page="1">
+                <div class="grid gap-7 md:grid-cols-12 md:items-center">
+                  <div class="md:col-span-5">
+                    <div class="relative">
+                      <div
+                        class="pointer-events-none absolute -bottom-6 left-6 right-0 h-full rounded-[22px] bg-[#0e0e0e] shadow-[0_30px_120px_rgba(0,0,0,0.85)]"
+                      ></div>
+
+                      <a
+                        href="#"
+                        class="relative block overflow-hidden rounded-[22px] ring-1 ring-white/10 bg-[#0b0b0b]"
+                      >
+                        <img
+                          src="../assets/imgs/post1-1.jpg"
+                          alt="Cyclist"
+                          class="h-[260px] w-full object-cover md:h-[300px] transition duration-500 group-hover:scale-[1.03] opacity-90 group-hover:opacity-70"
+                        />
+
+                        <span
+                          class="absolute inset-0 grid place-items-center opacity-0 transition duration-300 group-hover:opacity-100"
+                        >
+                          <span
+                            class="grid h-20 w-20 place-items-center rounded-full bg-orange-500 shadow-[0_18px_60px_rgba(0,0,0,0.65)]"
+                          >
+                            <i class="fa-solid fa-link text-xl text-white"></i>
+                          </span>
+                        </span>
+                      </a>
+                    </div>
+                  </div>
+
+                  <div class="md:col-span-7">
+                    <h3 class="text-3xl font-extrabold leading-tight">
+                      Top 7 Must have Accessories for Every Cyclist
+                    </h3>
+
+                    <div
+                      class="mt-4 flex items-center gap-3 text-sm text-white/60"
+                    >
+                      <img
+                        src="../assets/imgs/post2-1.jpg"
+                        alt="author"
+                        class="h-10 w-10 rounded-full ring-2 ring-white/10"
+                      />
+                      <div class="leading-5">
+                        <p class="text-white font-semibold">Tutorial</p>
+                        <p class="text-white/50">10 June 2024</p>
+                      </div>
+                    </div>
+
+                    <p class="mt-4 text-white/55 leading-7">
+                      Quisque velit nisi, pretium ut lacinia in, elementum id
+                      enim. Donec sollicitudin molestie malesuada...
+                    </p>
+
+                    <button
+                      class="js-read-more mt-5 inline-flex items-center gap-3 rounded-full bg-[#0e0e0e] px-5 py-3 text-sm font-semibold ring-1 ring-white/10 transition hover:bg-[#141414]"
+                      data-id="post1"
+                    >
+                      <span
+                        class="grid h-9 w-9 place-items-center rounded-full bg-orange-500/15 ring-1 ring-orange-500/20"
+                      >
+                        <i
+                          class="fa-solid fa-chevron-right text-orange-400"
+                        ></i>
+                      </span>
+                      Read More
+                    </button>
+                  </div>
+                </div>
+
+                <div class="mt-10 border-t border-white/10"></div>
+              </article>
+
+              <!-- Post 2 -->
+              <article class="post-card group" data-page="1">
+                <div class="grid gap-7 md:grid-cols-12 md:items-center">
+                  <div class="md:col-span-5">
+                    <div class="relative">
+                      <div
+                        class="pointer-events-none absolute -bottom-6 left-6 right-0 h-full rounded-[22px] bg-[#0e0e0e] shadow-[0_30px_120px_rgba(0,0,0,0.85)]"
+                      ></div>
+
+                      <a
+                        href="#"
+                        class="relative block overflow-hidden rounded-[22px] ring-1 ring-white/10 bg-[#0b0b0b]"
+                      >
+                        <img
+                          src="../assets/imgs/post3-1-360x320.jpg"
+                          alt="Trails"
+                          class="h-[260px] w-full object-cover md:h-[300px] transition duration-500 group-hover:scale-[1.03] opacity-90 group-hover:opacity-70"
+                        />
+                        <span
+                          class="absolute inset-0 grid place-items-center opacity-0 transition duration-300 group-hover:opacity-100"
+                        >
+                          <span
+                            class="grid h-20 w-20 place-items-center rounded-full bg-orange-500 shadow-[0_18px_60px_rgba(0,0,0,0.65)]"
+                          >
+                            <i class="fa-solid fa-link text-xl text-white"></i>
+                          </span>
+                        </span>
+                      </a>
+                    </div>
+                  </div>
+
+                  <div class="md:col-span-7">
+                    <h3 class="text-3xl font-extrabold leading-tight">
+                      5 Local Cycling Trails You Shouldn’t Miss
+                    </h3>
+
+                    <div
+                      class="mt-4 flex items-center gap-3 text-sm text-white/60"
+                    >
+                      <img
+                        src="../assets/imgs/post4-1-360x320.jpg"
+                        alt="author"
+                        class="h-10 w-10 rounded-full ring-2 ring-white/10"
+                      />
+                      <div class="leading-5">
+                        <p class="text-white font-semibold">Uncategorized</p>
+                        <p class="text-white/50">10 June 2024</p>
+                      </div>
+                    </div>
+
+                    <p class="mt-4 text-white/55 leading-7">
+                      Nulla porttitor accumsan tincidunt. Vestibulum ac diam sit
+                      amet quam vehicula elementum...
+                    </p>
+
+                    <button
+                      class="js-read-more mt-5 inline-flex items-center gap-3 rounded-full bg-[#0e0e0e] px-5 py-3 text-sm font-semibold ring-1 ring-white/10 transition hover:bg-[#141414]"
+                      data-id="post2"
+                    >
+                      <span
+                        class="grid h-9 w-9 place-items-center rounded-full bg-orange-500/15 ring-1 ring-orange-500/20"
+                      >
+                        <i
+                          class="fa-solid fa-chevron-right text-orange-400"
+                        ></i>
+                      </span>
+                      Read More
+                    </button>
+                  </div>
+                </div>
+
+                <div class="mt-10 border-t border-white/10"></div>
+              </article>
+
+              <!-- Post 3 (page 1) -->
+              <article class="post-card group" data-page="1">
+                <div class="grid gap-7 md:grid-cols-12 md:items-center">
+                  <div class="md:col-span-5">
+                    <div class="relative">
+                      <div
+                        class="pointer-events-none absolute -bottom-6 left-6 right-0 h-full rounded-[22px] bg-[#0e0e0e] shadow-[0_30px_120px_rgba(0,0,0,0.85)]"
+                      ></div>
+
+                      <a
+                        href="#"
+                        class="relative block overflow-hidden rounded-[22px] ring-1 ring-white/10 bg-[#0b0b0b]"
+                      >
+                        <img
+                          src="../assets/imgs/post1-1.jpg"
+                          alt="E-bike"
+                          class="h-[260px] w-full object-cover md:h-[300px] transition duration-500 group-hover:scale-[1.03] opacity-90 group-hover:opacity-70"
+                        />
+                        <span
+                          class="absolute inset-0 grid place-items-center opacity-0 transition duration-300 group-hover:opacity-100"
+                        >
+                          <span
+                            class="grid h-20 w-20 place-items-center rounded-full bg-orange-500 shadow-[0_18px_60px_rgba(0,0,0,0.65)]"
+                          >
+                            <i class="fa-solid fa-link text-xl text-white"></i>
+                          </span>
+                        </span>
+                      </a>
+                    </div>
+                  </div>
+
+                  <div class="md:col-span-7">
+                    <h3 class="text-3xl font-extrabold leading-tight">
+                      Electric Bikes Explained: Are They Worth It?
+                    </h3>
+
+                    <div
+                      class="mt-4 flex items-center gap-3 text-sm text-white/60"
+                    >
+                      <img
+                        src="../assets/imgs/post2-1.jpg"
+                        alt="author"
+                        class="h-10 w-10 rounded-full ring-2 ring-white/10"
+                      />
+                      <div class="leading-5">
+                        <p class="text-white font-semibold">News</p>
+                        <p class="text-white/50">10 June 2024</p>
+                      </div>
+                    </div>
+
+                    <p class="mt-4 text-white/55 leading-7">
+                      Mauris blandit aliquet elit, eget tincidunt nibh pulvinar
+                      a. Donec rutrum congue leo eget malesuada...
+                    </p>
+
+                    <button
+                      class="js-read-more mt-5 inline-flex items-center gap-3 rounded-full bg-[#0e0e0e] px-5 py-3 text-sm font-semibold ring-1 ring-white/10 transition hover:bg-[#141414]"
+                      data-id="post3"
+                    >
+                      <span
+                        class="grid h-9 w-9 place-items-center rounded-full bg-orange-500/15 ring-1 ring-orange-500/20"
+                      >
+                        <i
+                          class="fa-solid fa-chevron-right text-orange-400"
+                        ></i>
+                      </span>
+                      Read More
+                    </button>
+                  </div>
+                </div>
+
+                <div class="mt-10 border-t border-white/10"></div>
+              </article>
+
+              <!-- Post 4 (page 1) -->
+              <article class="post-card group" data-page="1">
+                <div class="grid gap-7 md:grid-cols-12 md:items-center">
+                  <div class="md:col-span-5">
+                    <div class="relative">
+                      <div
+                        class="pointer-events-none absolute -bottom-6 left-6 right-0 h-full rounded-[22px] bg-[#0e0e0e] shadow-[0_30px_120px_rgba(0,0,0,0.85)]"
+                      ></div>
+
+                      <a
+                        href="#"
+                        class="relative block overflow-hidden rounded-[22px] ring-1 ring-white/10 bg-[#0b0b0b]"
+                      >
+                        <img
+                          src="https://images.unsplash.com/photo-1507035895480-2b3156c31fc8?q=80&w=1400&auto=format&fit=crop"
+                          alt="Bike Fit"
+                          class="h-[260px] w-full object-cover md:h-[300px] transition duration-500 group-hover:scale-[1.03] opacity-90 group-hover:opacity-70"
+                        />
+                        <span
+                          class="absolute inset-0 grid place-items-center opacity-0 transition duration-300 group-hover:opacity-100"
+                        >
+                          <span
+                            class="grid h-20 w-20 place-items-center rounded-full bg-orange-500 shadow-[0_18px_60px_rgba(0,0,0,0.65)]"
+                          >
+                            <i class="fa-solid fa-link text-xl text-white"></i>
+                          </span>
+                        </span>
+                      </a>
+                    </div>
+                  </div>
+
+                  <div class="md:col-span-7">
+                    <h3 class="text-3xl font-extrabold leading-tight">
+                      How to Choose the Perfect Bike for Your Lifestyle
+                    </h3>
+
+                    <div
+                      class="mt-4 flex items-center gap-3 text-sm text-white/60"
+                    >
+                      <img
+                        src="https://i.pravatar.cc/80?img=25"
+                        alt="author"
+                        class="h-10 w-10 rounded-full ring-2 ring-white/10"
+                      />
+                      <div class="leading-5">
+                        <p class="text-white font-semibold">Interview</p>
+                        <p class="text-white/50">10 June 2024</p>
+                      </div>
+                    </div>
+
+                    <p class="mt-4 text-white/55 leading-7">
+                      Curabitur non nulla sit amet nisl tempus convallis quis ac
+                      lectus. Pellentesque in ipsum id orci porta dapibus...
+                    </p>
+
+                    <button
+                      class="js-read-more mt-5 inline-flex items-center gap-3 rounded-full bg-[#0e0e0e] px-5 py-3 text-sm font-semibold ring-1 ring-white/10 transition hover:bg-[#141414]"
+                      data-id="post4"
+                    >
+                      <span
+                        class="grid h-9 w-9 place-items-center rounded-full bg-orange-500/15 ring-1 ring-orange-500/20"
+                      >
+                        <i
+                          class="fa-solid fa-chevron-right text-orange-400"
+                        ></i>
+                      </span>
+                      Read More
+                    </button>
+                  </div>
+                </div>
+
+                <div class="mt-10 border-t border-white/10"></div>
+              </article>
+
+              <!-- Post 5 (page 2) -->
+              <article class="post-card group" data-page="2">
+                <div class="grid gap-7 md:grid-cols-12 md:items-center">
+                  <div class="md:col-span-5">
+                    <div class="relative">
+                      <div
+                        class="pointer-events-none absolute -bottom-6 left-6 right-0 h-full rounded-[22px] bg-[#0e0e0e] shadow-[0_30px_120px_rgba(0,0,0,0.85)]"
+                      ></div>
+
+                      <a
+                        href="#"
+                        class="relative block overflow-hidden rounded-[22px] ring-1 ring-white/10 bg-[#0b0b0b]"
+                      >
+                        <img
+                          src="https://images.unsplash.com/photo-1517677129300-07b130802f46?q=80&w=1400&auto=format&fit=crop"
+                          alt="Maintenance"
+                          class="h-[260px] w-full object-cover md:h-[300px] transition duration-500 group-hover:scale-[1.03] opacity-90 group-hover:opacity-70"
+                        />
+                        <span
+                          class="absolute inset-0 grid place-items-center opacity-0 transition duration-300 group-hover:opacity-100"
+                        >
+                          <span
+                            class="grid h-20 w-20 place-items-center rounded-full bg-orange-500 shadow-[0_18px_60px_rgba(0,0,0,0.65)]"
+                          >
+                            <i class="fa-solid fa-link text-xl text-white"></i>
+                          </span>
+                        </span>
+                      </a>
+                    </div>
+                  </div>
+
+                  <div class="md:col-span-7">
+                    <h3 class="text-3xl font-extrabold leading-tight">
+                      Simple Bike Maintenance Tips for Beginners
+                    </h3>
+
+                    <div
+                      class="mt-4 flex items-center gap-3 text-sm text-white/60"
+                    >
+                      <img
+                        src="https://i.pravatar.cc/80?img=9"
+                        alt="author"
+                        class="h-10 w-10 rounded-full ring-2 ring-white/10"
+                      />
+                      <div class="leading-5">
+                        <p class="text-white font-semibold">Tutorial</p>
+                        <p class="text-white/50">10 June 2024</p>
+                      </div>
+                    </div>
+
+                    <p class="mt-4 text-white/55 leading-7">
+                      Proin eget tortor risus. Vivamus magna justo, lacinia eget
+                      consectetur sed...
+                    </p>
+
+                    <button
+                      class="js-read-more mt-5 inline-flex items-center gap-3 rounded-full bg-[#0e0e0e] px-5 py-3 text-sm font-semibold ring-1 ring-white/10 transition hover:bg-[#141414]"
+                      data-id="post5"
+                    >
+                      <span
+                        class="grid h-9 w-9 place-items-center rounded-full bg-orange-500/15 ring-1 ring-orange-500/20"
+                      >
+                        <i
+                          class="fa-solid fa-chevron-right text-orange-400"
+                        ></i>
+                      </span>
+                      Read More
+                    </button>
+                  </div>
+                </div>
+
+                <div class="mt-10 border-t border-white/10"></div>
+              </article>
+
+              <!-- Post 6 (page 2) -->
+              <article class="post-card group" data-page="2">
+                <div class="grid gap-7 md:grid-cols-12 md:items-center">
+                  <div class="md:col-span-5">
+                    <div class="relative">
+                      <div
+                        class="pointer-events-none absolute -bottom-6 left-6 right-0 h-full rounded-[22px] bg-[#0e0e0e] shadow-[0_30px_120px_rgba(0,0,0,0.85)]"
+                      ></div>
+
+                      <a
+                        href="#"
+                        class="relative block overflow-hidden rounded-[22px] ring-1 ring-white/10 bg-[#0b0b0b]"
+                      >
+                        <img
+                          src="https://images.unsplash.com/photo-1471478331149-c72f17e33c73?q=80&w=1400&auto=format&fit=crop"
+                          alt="Helmet"
+                          class="h-[260px] w-full object-cover md:h-[300px] transition duration-500 group-hover:scale-[1.03] opacity-90 group-hover:opacity-70"
+                        />
+                        <span
+                          class="absolute inset-0 grid place-items-center opacity-0 transition duration-300 group-hover:opacity-100"
+                        >
+                          <span
+                            class="grid h-20 w-20 place-items-center rounded-full bg-orange-500 shadow-[0_18px_60px_rgba(0,0,0,0.65)]"
+                          >
+                            <i class="fa-solid fa-link text-xl text-white"></i>
+                          </span>
+                        </span>
+                      </a>
+                    </div>
+                  </div>
+
+                  <div class="md:col-span-7">
+                    <h3 class="text-3xl font-extrabold leading-tight">
+                      Helmet Safety: What You Should Know Before You Ride
+                    </h3>
+
+                    <div
+                      class="mt-4 flex items-center gap-3 text-sm text-white/60"
+                    >
+                      <img
+                        src="https://i.pravatar.cc/80?img=18"
+                        alt="author"
+                        class="h-10 w-10 rounded-full ring-2 ring-white/10"
+                      />
+                      <div class="leading-5">
+                        <p class="text-white font-semibold">News</p>
+                        <p class="text-white/50">10 June 2024</p>
+                      </div>
+                    </div>
+
+                    <p class="mt-4 text-white/55 leading-7">
+                      Nulla quis lorem ut libero malesuada feugiat. Donec rutrum
+                      congue leo eget malesuada...
+                    </p>
+
+                    <button
+                      class="js-read-more mt-5 inline-flex items-center gap-3 rounded-full bg-[#0e0e0e] px-5 py-3 text-sm font-semibold ring-1 ring-white/10 transition hover:bg-[#141414]"
+                      data-id="post6"
+                    >
+                      <span
+                        class="grid h-9 w-9 place-items-center rounded-full bg-orange-500/15 ring-1 ring-orange-500/20"
+                      >
+                        <i
+                          class="fa-solid fa-chevron-right text-orange-400"
+                        ></i>
+                      </span>
+                      Read More
+                    </button>
+                  </div>
+                </div>
+
+                <div class="mt-10 border-t border-white/10"></div>
+              </article>
+
+              <!-- Pagination UI -->
+              <div
+                id="pager"
+                class="pt-6 flex items-center justify-center gap-4"
+              >
+                <button
+                  id="prevBtn"
+                  class="h-10 px-4 rounded-full bg-[#0e0e0e] text-white font-extrabold ring-1 ring-white/10 hover:bg-[#141414] disabled:opacity-40 disabled:hover:bg-[#0e0e0e]"
+                >
+                  Prev
+                </button>
+
+                <button
+                  class="pageBtn h-10 w-10 rounded-full bg-[#0e0e0e] text-white font-extrabold ring-1 ring-white/10 hover:bg-[#141414]"
+                  data-page-btn="1"
+                >
+                  1
+                </button>
+                <button
+                  class="pageBtn h-10 w-10 rounded-full bg-[#0e0e0e] text-white font-extrabold ring-1 ring-white/10 hover:bg-[#141414]"
+                  data-page-btn="2"
+                >
+                  2
+                </button>
+
+                <button
+                  id="nextBtn"
+                  class="h-10 px-4 rounded-full bg-[#0e0e0e] text-white font-extrabold ring-1 ring-white/10 hover:bg-[#141414] disabled:opacity-40 disabled:hover:bg-[#0e0e0e]"
+                >
+                  Next
+                </button>
+              </div>
+            </div>
+
+            <!-- DETAILS VIEW (hidden initially) -->
+            <div id="postView" class="hidden">
+              <!-- back row -->
+              <div class="mb-6 flex items-center justify-between">
+                <button
+                  id="backToList"
+                  class="inline-flex items-center gap-3 rounded-full bg-[#0e0e0e] px-5 py-3 text-sm font-semibold ring-1 ring-white/10 hover:bg-[#141414] transition"
+                >
+                  <span
+                    class="grid h-9 w-9 place-items-center rounded-full bg-orange-500/15 ring-1 ring-orange-500/20"
+                  >
+                    <i class="fa-solid fa-arrow-left text-orange-400"></i>
+                  </span>
+                  Back to Blog
+                </button>
+
+                <!-- breadcrumb like the theme -->
+                <div
+                  class="hidden sm:flex items-center gap-2 text-sm text-white/45"
+                >
+                  <span class="inline-flex items-center gap-2">
+                    <i class="fa-solid fa-house"></i> Blog
+                  </span>
+                  <i class="fa-solid fa-chevron-right text-xs"></i>
+                  <span id="crumbCategory" class="text-white/70">Tutorial</span>
+                </div>
+              </div>
+
+              <!-- Title box -->
+              <div
+                class="rounded-[22px] bg-[#0e0e0e] ring-1 ring-white/10 shadow-[0_30px_120px_rgba(0,0,0,0.75)] overflow-hidden"
+              >
+                <div
+                  class="px-6 sm:px-8 py-6 border-b border-orange-500/15 bg-gradient-to-r from-orange-500/10 via-transparent to-transparent"
+                >
+                  <h2
+                    id="postTitle"
+                    class="text-2xl sm:text-3xl font-extrabold leading-tight"
+                  >
+                    Post Title Here
+                  </h2>
+                </div>
+
+                <div
+                  class="px-6 sm:px-8 py-4 flex flex-wrap items-center gap-6 text-sm text-white/55"
+                >
+                  <span class="inline-flex items-center gap-2">
+                    <i class="fa-regular fa-clock"></i>
+                    <span id="postDate">10 June 2024</span>
+                  </span>
+
+                  <span class="inline-flex items-center gap-2">
+                    <i class="fa-regular fa-eye"></i>
+                    <span id="postViews">24</span>
+                  </span>
+                </div>
+
+                <div class="px-6 sm:px-8 pb-8">
+                  <div
+                    class="overflow-hidden rounded-[18px] ring-1 ring-white/10 bg-black/30"
+                  >
+                    <img
+                      id="postImage"
+                      src=""
+                      alt="Post Image"
+                      class="h-[280px] sm:h-[380px] w-full object-cover opacity-90"
+                    />
+                  </div>
+
+                  <!-- Content -->
+                  <div
+                    id="postContent"
+                    class="prose prose-invert max-w-none mt-7"
+                  >
+                    <!-- injected via JS -->
+                  </div>
+
+                  <!-- Tags row -->
+                  <div id="postTags" class="mt-8 flex flex-wrap gap-3"></div>
+
+                  <!-- Share it -->
+                  <div
+                    class="mt-10 rounded-[18px] bg-black/25 ring-1 ring-white/10 overflow-hidden"
+                  >
+                    <div
+                      class="px-6 py-4 text-center font-extrabold border-b border-orange-500/15 bg-gradient-to-r from-orange-500/10 via-transparent to-transparent"
+                    >
+                      Share it
+                    </div>
+                    <div
+                      class="px-6 py-6 flex items-center justify-center gap-10 text-white/60"
+                    >
+                      <a href="#" class="hover:text-white transition"
+                        ><i class="fa-brands fa-facebook-f text-xl"></i
+                      ></a>
+                      <a href="#" class="hover:text-white transition"
+                        ><i class="fa-brands fa-x-twitter text-xl"></i
+                      ></a>
+                      <a href="#" class="hover:text-white transition"
+                        ><i class="fa-brands fa-pinterest-p text-xl"></i
+                      ></a>
+                      <a href="#" class="hover:text-white transition"
+                        ><i class="fa-brands fa-whatsapp text-xl"></i
+                      ></a>
+                      <a href="#" class="hover:text-white transition"
+                        ><i class="fa-regular fa-envelope text-xl"></i
+                      ></a>
+                    </div>
+                  </div>
+
+                  <!-- Prev / Next bar -->
+                  <div
+                    class="mt-10 rounded-[22px] bg-[#0e0e0e] ring-1 ring-white/10 overflow-hidden"
+                  >
+                    <div class="p-6 flex items-center justify-between gap-6">
+                      <button
+                        id="prevPostBtn"
+                        class="group flex items-center gap-4 text-left"
+                      >
+                        <span
+                          class="grid h-12 w-12 place-items-center rounded-full bg-orange-500 text-black font-extrabold"
+                        >
+                          <i class="fa-solid fa-chevron-left"></i>
+                        </span>
+                        <div>
+                          <p class="text-xs text-white/45">Previous</p>
+                          <p
+                            id="prevPostTitle"
+                            class="font-extrabold leading-5 group-hover:text-orange-400 transition"
+                          >
+                            —
+                          </p>
+                        </div>
+                      </button>
+
+                      <span
+                        class="hidden sm:block h-10 w-px bg-white/10"
+                      ></span>
+
+                      <button
+                        id="nextPostBtn"
+                        class="group flex items-center gap-4 text-left"
+                      >
+                        <span
+                          class="grid h-12 w-12 place-items-center rounded-full bg-orange-500 text-black font-extrabold"
+                        >
+                          <i class="fa-solid fa-chevron-right"></i>
+                        </span>
+                        <div>
+                          <p class="text-xs text-white/45">Next</p>
+                          <p
+                            id="nextPostTitle"
+                            class="font-extrabold leading-5 group-hover:text-orange-400 transition"
+                          >
+                            —
+                          </p>
+                        </div>
+                      </button>
+                    </div>
+                  </div>
+
+                  <!-- Related Posts -->
+                  <div
+                    class="mt-10 rounded-[22px] bg-[#0e0e0e] ring-1 ring-white/10 overflow-hidden"
+                  >
+                    <div
+                      class="px-6 py-5 text-center font-extrabold border-b border-orange-500/15 bg-gradient-to-r from-orange-500/10 via-transparent to-transparent"
+                    >
+                      Related Posts
+                    </div>
+
+                    <div
+                      id="relatedPosts"
+                      class="p-6 grid gap-6 sm:grid-cols-2"
+                    >
+                      <!-- injected via JS -->
+                    </div>
+                  </div>
+
+                  <!-- Comments -->
+                  <div
+                    class="mt-10 rounded-[22px] bg-[#0e0e0e] ring-1 ring-white/10 overflow-hidden"
+                  >
+                    <div
+                      class="px-6 py-5 text-center font-extrabold border-b border-orange-500/15 bg-gradient-to-r from-orange-500/10 via-transparent to-transparent"
+                    >
+                      <span class="inline-flex items-center gap-2">
+                        <i class="fa-regular fa-comments"></i>
+                        <span id="commentsCount">3</span> Comments
+                      </span>
+                    </div>
+
+                    <div class="p-6 space-y-6">
+                      <div
+                        class="rounded-[18px] bg-black/25 ring-1 ring-white/10 p-6"
+                      >
+                        <div class="flex items-start gap-4">
+                          <img
+                            src="https://i.pravatar.cc/80?img=47"
+                            class="h-12 w-12 rounded-full ring-2 ring-white/10"
+                            alt="user"
+                          />
+                          <div class="flex-1">
+                            <div
+                              class="flex items-center justify-between gap-4"
+                            >
+                              <p class="font-extrabold">
+                                Sarah
+                                <span class="text-white/50 font-semibold"
+                                  >says:</span
+                                >
+                              </p>
+                              <p class="text-xs text-white/40">
+                                June 1, 2024 at 7:59 am
+                              </p>
+                            </div>
+                            <p class="mt-3 text-white/55 leading-7">
+                              I would love a theme for businesses that make
+                              things by hand...
+                            </p>
+                            <button
+                              class="mt-4 text-sm font-bold text-white/70 hover:text-orange-400 transition"
+                            >
+                              Reply
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div
+                        class="rounded-[18px] bg-black/25 ring-1 ring-white/10 p-6"
+                      >
+                        <div class="flex items-start gap-4">
+                          <img
+                            src="https://i.pravatar.cc/80?img=12"
+                            class="h-12 w-12 rounded-full ring-2 ring-white/10"
+                            alt="user"
+                          />
+                          <div class="flex-1">
+                            <div
+                              class="flex items-center justify-between gap-4"
+                            >
+                              <p class="font-extrabold">
+                                David
+                                <span class="text-white/50 font-semibold"
+                                  >says:</span
+                                >
+                              </p>
+                              <p class="text-xs text-white/40">
+                                June 1, 2024 at 7:59 am
+                              </p>
+                            </div>
+                            <p class="mt-3 text-white/55 leading-7">
+                              Best support ever. Quick response and always a
+                              solution...
+                            </p>
+                            <button
+                              class="mt-4 text-sm font-bold text-white/70 hover:text-orange-400 transition"
+                            >
+                              Reply
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Leave a Reply -->
+                  <div
+                    class="mt-10 rounded-[22px] bg-[#0e0e0e] ring-1 ring-white/10 overflow-hidden"
+                  >
+                    <div
+                      class="px-6 py-5 border-b border-orange-500/15 bg-gradient-to-r from-orange-500/10 via-transparent to-transparent"
+                    >
+                      <h3 class="text-2xl font-extrabold">Leave a Reply</h3>
+                      <p class="mt-2 text-sm text-white/45">
+                        Your email address will not be published. Required
+                        fields are marked *
+                      </p>
+                    </div>
+
+                    <form class="p-6 space-y-5">
+                      <div>
+                        <label class="text-sm text-white/70 font-semibold"
+                          >Comment *</label
+                        >
+                        <textarea
+                          class="mt-2 w-full rounded-[18px] bg-white/10 text-white placeholder:text-white/35 ring-1 ring-white/10 focus:outline-none focus:ring-2 focus:ring-orange-500/40 p-4 h-44"
+                          placeholder="Write your comment..."
+                        ></textarea>
+                      </div>
+
+                      <div class="grid gap-4 sm:grid-cols-3">
+                        <div>
+                          <label class="text-sm text-white/70 font-semibold"
+                            >Name *</label
+                          >
+                          <input
+                            class="mt-2 w-full rounded-full bg-white/10 text-white placeholder:text-white/35 ring-1 ring-white/10 focus:outline-none focus:ring-2 focus:ring-orange-500/40 px-5 py-3"
+                            placeholder="Your name"
+                          />
+                        </div>
+                        <div>
+                          <label class="text-sm text-white/70 font-semibold"
+                            >Email *</label
+                          >
+                          <input
+                            class="mt-2 w-full rounded-full bg-white/10 text-white placeholder:text-white/35 ring-1 ring-white/10 focus:outline-none focus:ring-2 focus:ring-orange-500/40 px-5 py-3"
+                            placeholder="Email"
+                          />
+                        </div>
+                        <div>
+                          <label class="text-sm text-white/70 font-semibold"
+                            >6 + 7 = ?</label
+                          >
+                          <input
+                            class="mt-2 w-full rounded-full bg-white/10 text-white placeholder:text-white/35 ring-1 ring-white/10 focus:outline-none focus:ring-2 focus:ring-orange-500/40 px-5 py-3"
+                            placeholder="Answer"
+                          />
+                        </div>
+                      </div>
+
+                      <label
+                        class="flex items-center gap-3 text-sm text-white/55"
+                      >
+                        <input
+                          type="checkbox"
+                          class="h-4 w-4 accent-orange-500"
+                        />
+                        Save my name, email, and website in this browser for the
+                        next time I comment.
+                      </label>
+
+                      <button
+                        type="button"
+                        class="rounded-full bg-orange-500 px-8 py-3 text-sm font-extrabold text-black hover:brightness-110 transition"
+                      >
+                        Post Comment
+                      </button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- RIGHT: SIDEBAR -->
+          <aside class="lg:col-span-4">
+            <div class="sticky top-24 space-y-8">
+              <!-- Search in Blog -->
+              <div
+                class="rounded-[22px] bg-[#0e0e0e] ring-1 ring-white/10 shadow-[0_30px_120px_rgba(0,0,0,0.75)] overflow-hidden"
+              >
+                <div class="px-6 py-5 border-b border-white/10">
+                  <h4 class="text-center font-extrabold text-lg">
+                    Search in Blog
+                  </h4>
+                </div>
+
+                <div class="p-6">
+                  <div class="flex gap-4">
+                    <input
+                      type="text"
+                      placeholder="Search ..."
+                      class="w-full rounded-full bg-black/40 px-5 py-3 text-sm text-white placeholder:text-white/40 ring-1 ring-white/10 focus:outline-none focus:ring-2 focus:ring-orange-500/40"
+                    />
+                    <button
+                      class="shrink-0 rounded-full bg-orange-500 hover:bg-white px-7 py-3 text-sm font-bold text-white hover:text-orange-500 transition hover:brightness-110"
+                    >
+                      Search
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Tags Cloud -->
+              <div
+                class="rounded-[22px] bg-[#0e0e0e] ring-1 ring-white/10 shadow-[0_30px_120px_rgba(0,0,0,0.75)] overflow-hidden"
+              >
+                <div class="px-6 py-5 border-b border-white/10">
+                  <h4 class="text-center font-extrabold text-lg">Tags Cloud</h4>
+                </div>
+
+                <div class="p-6">
+                  <div class="flex flex-wrap justify-center gap-3">
+                    <a
+                      href="#"
+                      class="rounded-full bg-black/40 px-4 py-2 text-xs font-semibold text-white/85 ring-1 ring-white/10 hover:bg-orange-500 transition"
+                      >article</a
+                    >
+                    <a
+                      href="#"
+                      class="rounded-full bg-black/40 px-4 py-2 text-xs font-abold text-white/85 ring-1 ring-white/10 hover:bg-orange-500 transition"
+                      >computer</a
+                    >
+                    <a
+                      href="#"
+                      class="rounded-full bg-black/40 px-4 py-2 text-xs font-semibold text-white/85 ring-1 ring-white/10 hover:bg-orange-500 transition"
+                      >developer</a
+                    >
+                    <a
+                      href="#"
+                      class="rounded-full bg-black/40 px-4 py-2 text-xs font-semibold text-white/85 ring-1 ring-white/10 hover:bg-orange-500 transition"
+                      >famous</a
+                    >
+                    <a
+                      href="#"
+                      class="rounded-full bg-black/40 px-4 py-2 text-xs font-semibold text-white/85 ring-1 ring-white/10 hover:bg-orange-500 transition"
+                      >interview</a
+                    >
+                    <a
+                      href="#"
+                      class="rounded-full bg-black/40 px-4 py-2 text-xs font-semibold text-white/85 ring-1 ring-white/10 hover:bg-orange-500 transition"
+                      >it</a
+                    >
+                    <a
+                      href="#"
+                      class="rounded-full bg-black/40 px-4 py-2 text-xs font-semibold text-white/85 ring-1 ring-white/10 hover:bg-orange-500 transition"
+                      >learn</a
+                    >
+                    <a
+                      href="#"
+                      class="rounded-full bg-black/40 px-4 py-2 text-xs font-semibold text-white/85 ring-1 ring-white/10 hover:bg-orange-500 transition"
+                      >money</a
+                    >
+                    <a
+                      href="#"
+                      class="rounded-full bg-black/40 px-4 py-2 text-xs font-semibold text-white/85 ring-1 ring-white/10 hover:bg-orange-500 transition"
+                      >photography</a
+                    >
+                    <a
+                      href="#"
+                      class="rounded-full bg-black/40 px-4 py-2 text-xs font-semibold text-white/85 ring-1 ring-white/10 hover:bg-orange-500 transition"
+                      >post</a
+                    >
+                    <a
+                      href="#"
+                      class="rounded-full bg-black/40 px-4 py-2 text-xs font-semibold text-white/85 ring-1 ring-white/10 hover:bg-orange-500 transition"
+                      >seo</a
+                    >
+                    <a
+                      href="#"
+                      class="rounded-full bg-black/40 px-4 py-2 text-xs font-semibold text-white/85 ring-1 ring-white/10 hover:bg-orange-500 transition"
+                      >technology</a
+                    >
+                    <a
+                      href="#"
+                      class="rounded-full bg-black/40 px-4 py-2 text-xs font-semibold text-white/85 ring-1 ring-white/10 hover:bg-orange-500 transition"
+                      >tutorial</a
+                    >
+                    <a
+                      href="#"
+                      class="rounded-full bg-black/40 px-4 py-2 text-xs font-semibold text-white/85 ring-1 ring-white/10 hover:bg-orange-500 transition"
+                      >tuts</a
+                    >
+                    <a
+                      href="#"
+                      class="rounded-full bg-black/40 px-4 py-2 text-xs font-semibold text-white/85 ring-1 ring-white/10 hover:bg-orange-500 transition"
+                      >website</a
+                    >
+                    <a
+                      href="#"
+                      class="rounded-full bg-black/40 px-4 py-2 text-xs font-semibold text-white/85 ring-1 ring-white/10 hover:bg-orange-500 transition"
+                      >wordpress</a
+                    >
+                    <a
+                      href="#"
+                      class="rounded-full bg-black/40 px-4 py-2 text-xs font-semibold text-white/85 ring-1 ring-white/10 hover:bg-orange-500 transition"
+                      >WP</a
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <!-- Ads -->
+              <div
+                class="rounded-[22px] bg-[#0e0e0e] ring-1 ring-white/10 shadow-[0_30px_120px_rgba(0,0,0,0.75)] overflow-hidden"
+              >
+                <div class="px-6 py-5 border-b border-white/10">
+                  <h4 class="text-center font-extrabold text-lg">Ads</h4>
+                </div>
+
+                <div class="p-6">
+                  <div
+                    class="overflow-hidden rounded-[18px] ring-1 ring-white/10 bg-black/30"
+                  >
+                    <img
+                      src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=1200&auto=format&fit=crop"
+                      alt="Advertisement"
+                      class="h-[240px] w-full object-cover opacity-80"
+                    />
+                  </div>
+                  <p class="mt-3 text-center text-sm text-white/45">
+                    Advertisement
+                  </p>
+                </div>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+
+      <!-- Vanilla JS: pagination (page 1 / page 2) -->
+      <script>
+        (function () {
+          const cards = Array.from(document.querySelectorAll(".post-card"));
+          const pageBtns = Array.from(document.querySelectorAll(".pageBtn"));
+          const prevBtn = document.getElementById("prevBtn");
+          const nextBtn = document.getElementById("nextBtn");
+
+          let currentPage = 1;
+          const maxPage = 2;
+
+          function render() {
+            cards.forEach((c) => {
+              const page = Number(c.getAttribute("data-page"));
+              c.classList.toggle("hidden", page !== currentPage);
+            });
+
+            pageBtns.forEach((b) => {
+              const p = Number(b.getAttribute("data-page-btn"));
+              if (p === currentPage) {
+                b.className =
+                  "pageBtn h-10 w-10 rounded-full bg-orange-500 text-black font-extrabold ring-1 ring-orange-500/30";
+              } else {
+                b.className =
+                  "pageBtn h-10 w-10 rounded-full bg-[#0e0e0e] text-white font-extrabold ring-1 ring-white/10 hover:bg-[#141414]";
+              }
+            });
+
+            prevBtn.disabled = currentPage === 1;
+            nextBtn.disabled = currentPage === maxPage;
+
+            document
+              .getElementById("postsWrap")
+              .scrollIntoView({ behavior: "smooth", block: "start" });
+          }
+
+          pageBtns.forEach((b) => {
+            b.addEventListener("click", () => {
+              currentPage = Number(b.getAttribute("data-page-btn"));
+              render();
+            });
+          });
+
+          prevBtn.addEventListener("click", () => {
+            if (currentPage > 1) currentPage--;
+            render();
+          });
+
+          nextBtn.addEventListener("click", () => {
+            if (currentPage < maxPage) currentPage++;
+            render();
+          });
+
+          // expose for details script (so it can keep page)
+          window.__BLOG_PAGER__ = {
+            getPage: () => currentPage,
+            setPage: (p) => {
+              currentPage = p;
+              render();
+            },
+            render,
+          };
+
+          render();
+        })();
+      </script>
+
+      <!-- Vanilla JS: Read more -> open details in same page -->
+      <script>
+        (function () {
+          const listView = document.getElementById("listView");
+          const postView = document.getElementById("postView");
+          const pager = document.getElementById("pager");
+
+          const backBtn = document.getElementById("backToList");
+
+          const postTitle = document.getElementById("postTitle");
+          const crumbCategory = document.getElementById("crumbCategory");
+          const postDate = document.getElementById("postDate");
+          const postViews = document.getElementById("postViews");
+          const postImage = document.getElementById("postImage");
+          const postContent = document.getElementById("postContent");
+          const postTags = document.getElementById("postTags");
+
+          const prevPostBtn = document.getElementById("prevPostBtn");
+          const nextPostBtn = document.getElementById("nextPostBtn");
+          const prevPostTitle = document.getElementById("prevPostTitle");
+          const nextPostTitle = document.getElementById("nextPostTitle");
+
+          const relatedPosts = document.getElementById("relatedPosts");
+
+          let lastListPage = 1;
+
+          const POSTS = {
+            post1: {
+              id: "post1",
+              title: "Top 7 Must have Accessories for Every Cyclist",
+              category: "Tutorial",
+              date: "10 June 2024",
+              views: 24,
+              image:
+                "../assets/imgs/post1-1.jpg",
+              tags: ["Tutorial", "Updates", "article", "learn", "tuts", "WP"],
+              contentHTML: `
+            <p class="text-white/60 leading-7">
+              Donec rutrum congue leo eget malesuada. Donec sollicitudin molestie malesuada.
+              Nulla porttitor accumsan tincidunt.
+            </p>
+
+            <div class="my-7 rounded-[18px] bg-black/25 ring-1 ring-white/10 p-6 text-center text-white/70 leading-7">
+              Pellentesque in ipsum id orci porta dapibus. <br/>
+              Pellentesque in ipsum id orci porta dapibus. Nulla porttitor accumsan tincidunt.
+            </div>
+
+            <p class="text-white/60 leading-7">
+              In the beautiful surroundings of Upcote Farm in Cheltenham, 2000 Trees festival is a gem...
+              <span class="rounded-md bg-orange-500/15 px-2 py-1 text-orange-300 font-semibold">20 minute waits</span>
+              ...the balance between atmosphere and accessibility is second to none.
+            </p>
+
+            <div class="mt-7 grid gap-6 md:grid-cols-2 md:items-start">
+              <div class="rounded-[18px] bg-black/25 ring-1 ring-white/10 p-6 text-center text-white/70 leading-7">
+                Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a.
+              </div>
+
+              <p class="text-white/60 leading-7">
+                Cras ultricies ligula sed magna dictum porta. Lorem ipsum dolor sit amet,
+                consectetur adipiscing elit. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem...
+              </p>
+            </div>
+
+            <p class="mt-7 text-white/60 leading-7">
+              Donec sollicitudin molestie malesuada. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a.
+              Nulla quis lorem ut libero malesuada feugiat.
+            </p>
+          `,
+              related: ["post2", "post4"],
+            },
+
+            post2: {
+              id: "post2",
+              title: "5 Local Cycling Trails You Shouldn’t Miss",
+              category: "Uncategorized",
+              date: "10 June 2024",
+              views: 18,
+              image:
+                "../assets/imgs/post2-1.jpg",
+              tags: [
+                "article",
+                "technology",
+                "tutorial",
+                "tuts",
+                "website",
+                "WP",
+              ],
+              contentHTML: `
+            <p class="text-white/60 leading-7">
+              Nulla porttitor accumsan tincidunt. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui.
+            </p>
+
+            <div class="my-7 rounded-[18px] bg-black/25 ring-1 ring-white/10 p-6 text-center text-white/70 leading-7">
+              Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem.
+            </div>
+
+            <p class="text-white/60 leading-7">
+              Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus.
+              Proin eget tortor risus. Pellentesque in ipsum id orci porta dapibus.
+            </p>
+          `,
+              related: ["post1", "post3"],
+            },
+
+            post3: {
+              id: "post3",
+              title: "Electric Bikes Explained: Are They Worth It?",
+              category: "News",
+              date: "10 June 2024",
+              views: 31,
+              image:
+                "../assets/imgs/post3-1-360x320.jpg",
+              tags: ["News", "e-bike", "technology", "article", "WP"],
+              contentHTML: `
+            <p class="text-white/60 leading-7">
+              Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Donec rutrum congue leo eget malesuada.
+              Curabitur non nulla sit amet nisl tempus convallis quis ac lectus.
+            </p>
+
+            <div class="my-7 rounded-[18px] bg-black/25 ring-1 ring-white/10 p-6 text-center text-white/70 leading-7">
+              Tip: Keep your battery between 20% and 80% for longer lifespan.
+            </div>
+
+            <p class="text-white/60 leading-7">
+              Pellentesque in ipsum id orci porta dapibus. Vivamus magna justo, lacinia eget consectetur sed,
+              convallis at tellus.
+            </p>
+          `,
+              related: ["post2", "post6"],
+            },
+
+            post4: {
+              id: "post4",
+              title: "How to Choose the Perfect Bike for Your Lifestyle",
+              category: "Interview",
+              date: "10 June 2024",
+              views: 22,
+              image:
+                "../assets/imgs/post4-1-360x320.jpg",
+              tags: ["Interview", "tutorial", "learn", "website", "WP"],
+              contentHTML: `
+            <p class="text-white/60 leading-7">
+              Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Pellentesque in ipsum id orci porta dapibus.
+            </p>
+
+            <div class="my-7 rounded-[18px] bg-black/25 ring-1 ring-white/10 p-6 text-center text-white/70 leading-7">
+              Bike fit matters: saddle height, reach, and handlebar width can change everything.
+            </div>
+
+            <p class="text-white/60 leading-7">
+              Donec sollicitudin molestie malesuada. Nulla quis lorem ut libero malesuada feugiat.
+            </p>
+          `,
+              related: ["post1", "post5"],
+            },
+
+            post5: {
+              id: "post5",
+              title: "Simple Bike Maintenance Tips for Beginners",
+              category: "Tutorial",
+              date: "10 June 2024",
+              views: 19,
+              image:
+                "../assets/imgs/post1-1.jpg",
+              tags: ["Tutorial", "maintenance", "learn", "tuts", "WP"],
+              contentHTML: `
+            <p class="text-white/60 leading-7">
+              Proin eget tortor risus. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus.
+            </p>
+
+            <div class="my-7 rounded-[18px] bg-black/25 ring-1 ring-white/10 p-6 text-center text-white/70 leading-7">
+              Clean + lube your chain every 150–200km (or after rain).
+            </div>
+
+            <p class="text-white/60 leading-7">
+              Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Donec rutrum congue leo eget malesuada.
+            </p>
+          `,
+              related: ["post4", "post6"],
+            },
+
+            post6: {
+              id: "post6",
+              title: "Helmet Safety: What You Should Know Before You Ride",
+              category: "News",
+              date: "10 June 2024",
+              views: 27,
+              image:
+                "../assets/imgs/post3-1-360x320.jpg",
+              tags: ["News", "safety", "article", "learn", "WP"],
+              contentHTML: `
+            <p class="text-white/60 leading-7">
+              Nulla quis lorem ut libero malesuada feugiat. Donec rutrum congue leo eget malesuada.
+              Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui.
+            </p>
+
+            <div class="my-7 rounded-[18px] bg-black/25 ring-1 ring-white/10 p-6 text-center text-white/70 leading-7">
+              Replace your helmet after a crash—even if it looks fine.
+            </div>
+
+            <p class="text-white/60 leading-7">
+              Pellentesque in ipsum id orci porta dapibus. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus.
+            </p>
+          `,
+              related: ["post3", "post5"],
+            },
+          };
+
+          const postOrder = [
+            "post1",
+            "post2",
+            "post3",
+            "post4",
+            "post5",
+            "post6",
+          ];
+
+          function scrollToTopLeft() {
+            document
+              .getElementById("postsWrap")
+              .scrollIntoView({ behavior: "smooth", block: "start" });
+          }
+
+          function showList() {
+            postView.classList.add("hidden");
+            listView.classList.remove("hidden");
+
+            if (pager) pager.classList.remove("hidden");
+
+            if (window.__BLOG_PAGER__)
+              window.__BLOG_PAGER__.setPage(lastListPage);
+
+            scrollToTopLeft();
+          }
+
+          function renderRelated(ids) {
+            relatedPosts.innerHTML = "";
+            ids.forEach((id) => {
+              const p = POSTS[id];
+              if (!p) return;
+
+              relatedPosts.insertAdjacentHTML(
+                "beforeend",
+                `
+              <button
+                class="js-related block text-left overflow-hidden rounded-[18px] ring-1 ring-white/10 bg-black/25 hover:bg-[#141414] transition"
+                data-id="${p.id}"
+              >
+                <div class="h-40 w-full overflow-hidden">
+                  <img src="${p.image}" alt="${p.title}"
+                    class="h-full w-full object-cover opacity-90 hover:opacity-70 transition" />
+                </div>
+                <div class="p-5">
+                  <p class="text-sm text-white/50">${p.category}</p>
+                  <p class="mt-1 font-extrabold leading-6">${p.title}</p>
+                </div>
+              </button>
+            `,
+              );
+            });
+
+            document.querySelectorAll(".js-related").forEach((btn) => {
+              btn.addEventListener("click", () => showPost(btn.dataset.id));
+            });
+          }
+
+          function renderPrevNext(currentId) {
+            const idx = postOrder.indexOf(currentId);
+            const prev = postOrder[idx - 1] || null;
+            const next = postOrder[idx + 1] || null;
+
+            if (prev) {
+              prevPostTitle.textContent = POSTS[prev].title;
+              prevPostBtn.style.opacity = "1";
+              prevPostBtn.style.pointerEvents = "auto";
+              prevPostBtn.onclick = () => showPost(prev);
+            } else {
+              prevPostTitle.textContent = "—";
+              prevPostBtn.style.opacity = "0.4";
+              prevPostBtn.style.pointerEvents = "none";
+            }
+
+            if (next) {
+              nextPostTitle.textContent = POSTS[next].title;
+              nextPostBtn.style.opacity = "1";
+              nextPostBtn.style.pointerEvents = "auto";
+              nextPostBtn.onclick = () => showPost(next);
+            } else {
+              nextPostTitle.textContent = "—";
+              nextPostBtn.style.opacity = "0.4";
+              nextPostBtn.style.pointerEvents = "none";
+            }
+          }
+
+          function showPost(id) {
+            const p = POSTS[id];
+            if (!p) return;
+
+            // حفظ صفحة القائمة الحالية قبل ما نفتح التفاصيل
+            if (window.__BLOG_PAGER__)
+              lastListPage = window.__BLOG_PAGER__.getPage();
+
+            // swap views
+            listView.classList.add("hidden");
+            postView.classList.remove("hidden");
+
+            // اخفي Pagination وانت بتعرض التفاصيل
+            if (pager) pager.classList.add("hidden");
+
+            // fill content
+            postTitle.textContent = p.title;
+            crumbCategory.textContent = p.category;
+            postDate.textContent = p.date;
+            postViews.textContent = p.views;
+            postImage.src = p.image;
+
+            postContent.innerHTML = p.contentHTML;
+
+            // tags
+            postTags.innerHTML = "";
+            p.tags.forEach((t) => {
+              postTags.insertAdjacentHTML(
+                "beforeend",
+                `<a href="#" class="rounded-full bg-black/30 px-4 py-2 text-xs font-semibold text-white/80 ring-1 ring-white/10 hover:bg-[#141414] transition">${t}</a>`,
+              );
+            });
+
+            renderPrevNext(id);
+            renderRelated(p.related || []);
+            scrollToTopLeft();
+          }
+
+          // Read more buttons (كلهم)
+          document.querySelectorAll(".js-read-more").forEach((btn) => {
+            btn.addEventListener("click", () => showPost(btn.dataset.id));
+          });
+
+          // back
+          backBtn.addEventListener("click", showList);
+        })();
+      </script>
+    </section>
+
+    <!-- TOP CONTACT BAR (above footer) -->
+    <section class="relative text-white pt-24 mb-[-70px]">
+      <div class="mx-auto max-w-7xl px-6 lg:px-10">
+        <div
+          class="rounded-[70px] bg-[#202020] border border-white/10 backdrop-blur-md shadow-[0_30px_90px_rgba(0,0,0,0.6)] px-10 py-30"
+        >
+          <div class="grid gap-10 md:grid-cols-3 items-center text-center">
+            <!-- item 1 -->
+            <div class="relative">
+              <p class="text-[#ff6900] text-sm font-semibold">
+                Pre-sale Questions
+              </p>
+              <p
+                class="mt-3 text-2xl font-extrabold hover:text-orange-500 cursor-pointer"
+              >
+                help@xtrabicycle.com
+              </p>
+
+              <!-- divider -->
+              <span
+                class="hidden md:block absolute right-[-20px] top-1/2 -translate-y-1/2 h-10 w-px bg-white/10"
+              ></span>
+            </div>
+
+            <!-- item 2 -->
+            <div class="relative">
+              <p class="text-[#ff6900] text-sm font-semibold">Call Us</p>
+              <p
+                class="mt-3 text-2xl font-extrabold hover:text-orange-500 cursor-pointer"
+              >
+                +1 800 2345 6789
+              </p>
+
+              <!-- divider -->
+              <span
+                class="hidden md:block absolute right-[-20px] top-1/2 -translate-y-1/2 h-10 w-px bg-white/10"
+              ></span>
+            </div>
+
+            <!-- item 3 -->
+            <div>
+              <p class="text-[#ff6900] text-sm font-semibold">Our Location</p>
+              <p
+                class="mt-3 text-2xl font-extrabold hover:text-orange-500 cursor-pointer"
+              >
+                #2354, Beverly Hills, LA
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="relative bg-[#1a1a1a] text-white pt-16 pb-25">
+      <div class="mx-auto max-w-7xl px-6 lg:px-10">
+        <div class="grid gap-12 lg:grid-cols-4">
+          <!-- Office -->
+          <div>
+            <h3 class="text-xl font-extrabold">Office</h3>
+            <span
+              class="mt-3 block h-[3px] w-7 rounded-full bg-[#ff6900]"
+            ></span>
+
+            <ul class="mt-8 space-y-4 text-white/70">
+              <li class="group flex gap-3">
+                <span
+                  class="mt-0.5 grid h-10 w-10 place-items-center rounded-full bg-white text-[#ff6900] transition-transform duration-300 transform-gpu group-hover:scale-110 hover:bg-orange-600 hover:text-white"
+                >
+                  <i class="fa-solid fa-location-dot"></i>
+                </span>
+                <span class="leading-7">121 King Street, NewYork</span>
+              </li>
+
+              <li class="group flex gap-3">
+                <span
+                  class="mt-0.5 grid h-10 w-10 place-items-center rounded-full bg-white text-[#ff6900] transition-transform duration-300 transform-gpu group-hover:scale-110 hover:bg-orange-600 hover:text-white"
+                >
+                  <i class="fa-solid fa-phone"></i>
+                </span>
+                <span class="leading-7">+1 (800) 333 44 55</span>
+              </li>
+
+              <li class="group flex gap-3">
+                <span
+                  class="mt-0.5 grid h-10 w-10 place-items-center rounded-full bg-white text-[#ff6900] transition-transform duration-300 transform-gpu group-hover:scale-110 hover:bg-orange-600 hover:text-white"
+                >
+                  <i class="fa-solid fa-envelope"></i>
+                </span>
+                <span class="leading-7">xtrabike@gmail.com</span>
+              </li>
+
+              <li class="group flex gap-3">
+                <span
+                  class="mt-0.5 grid h-10 w-10 place-items-center rounded-full bg-white text-[#ff6900] transition-transform duration-300 transform-gpu group-hover:scale-110 hover:bg-orange-600 hover:text-white"
+                >
+                  <i class="fa-solid fa-phone-volume"></i>
+                </span>
+                <span class="leading-7">+1 (800) 333 99 88</span>
+              </li>
+
+              <li class="group flex gap-3">
+                <span
+                  class="mt-0.5 grid h-10 w-10 place-items-center rounded-full bg-white text-[#ff6900] transition-transform duration-300 transform-gpu group-hover:scale-110 hover:bg-orange-600 hover:text-white"
+                >
+                  <i class="fa-brands fa-x-twitter"></i>
+                </span>
+                <span class="leading-7">@xtra_bikeshop</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- News -->
+          <div>
+            <h3 class="text-xl font-extrabold">News</h3>
+            <span
+              class="mt-3 block h-[3px] w-7 rounded-full bg-[#ff6900]"
+            ></span>
+
+            <div class="mt-8 space-y-6">
+              <!-- post 1 -->
+              <article class="flex gap-4">
+                <!-- Image hover like screenshot 1 -->
+                <a
+                  href="#"
+                  class="group relative h-[68px] w-[68px] shrink-0 rounded-xl overflow-hidden"
+                >
+                  <img
+                    src="../assets/imgs/post1-1.jpg"
+                    alt=""
+                    class="h-14 w-14 rounded-xl object-cover transition duration-300 group-hover:scale-105"
+                  />
+
+                  <!-- dark overlay -->
+                  <span
+                    class="absolute inset-0 bg-black/0 transition duration-300 group-hover:bg-black/55"
+                    aria-hidden="true"
+                  ></span>
+
+                  <!-- chain icon -->
+                  <span
+                    class="absolute inset-0 grid place-items-center opacity-0 scale-90 transition duration-300 group-hover:opacity-100 group-hover:scale-100"
+                    aria-hidden="true"
+                  >
+                    <i class="fa-solid fa-link text-[#ff6900] text-lg"></i>
+                  </span>
+                </a>
+
+                <!-- Text hover like screenshot 2 -->
+                <div class="min-w-0">
+                  <a
+                    href="#"
+                    class="block font-extrabold leading-6 text-white transition-colors duration-300 hover:text-[#ff6900]"
+                    title="Top 7 Must have Accessories for..."
+                  >
+                    Top 7 Must have Accessories for...
+                  </a>
+
+                  <div
+                    class="mt-2 flex items-center gap-3 text-sm text-white/50"
+                  >
+                    <span class="flex items-center gap-2">
+                      <i class="fa-regular fa-clock"></i> 10 June 2024
+                    </span>
+                    <span class="flex items-center gap-2">
+                      <i class="fa-regular fa-comment-dots"></i> 20
+                    </span>
+                  </div>
+                </div>
+              </article>
+
+              <!-- divider line -->
+              <div class="h-px w-full bg-white/10"></div>
+
+              <!-- post 2 -->
+              <article class="flex gap-4">
+                <!-- Image hover -->
+                <a
+                  href="#"
+                  class="group relative h-[68px] w-[68px] shrink-0 rounded-xl overflow-hidden"
+                >
+                  <img
+                    src="../assets/imgs/post2-1.jpg"
+                    alt=""
+                    class="h-14 w-14 rounded-xl object-cover duration-300 group-hover:scale-105"
+                  />
+
+                  <span
+                    class="absolute inset-0 bg-black/0 transition duration-300 group-hover:bg-black/55"
+                    aria-hidden="true"
+                  ></span>
+
+                  <span
+                    class="absolute inset-0 grid place-items-center opacity-0 scale-90 transition duration-300 group-hover:opacity-100 group-hover:scale-100"
+                    aria-hidden="true"
+                  >
+                    <i class="fa-solid fa-link text-[#ff6900] text-lg"></i>
+                  </span>
+                </a>
+
+                <!-- Text hover -->
+                <div class="min-w-0">
+                  <a
+                    href="#"
+                    class="block font-extrabold leading-6 text-white transition-colors duration-300 hover:text-[#ff6900]"
+                    title="How to Choose the Perfect Bike for Yo..."
+                  >
+                    How to Choose the Perfect Bike for Yo...
+                  </a>
+
+                  <div
+                    class="mt-2 flex items-center gap-3 text-sm text-white/50"
+                  >
+                    <span class="flex items-center gap-2">
+                      <i class="fa-regular fa-clock"></i> 10 June 2024
+                    </span>
+                    <span class="flex items-center gap-2">
+                      <i class="fa-regular fa-comment-dots"></i> 12
+                    </span>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+
+          <!-- Shortcuts -->
+          <div>
+            <h3 class="text-xl font-extrabold">Shortcuts</h3>
+            <span
+              class="mt-3 block h-[3px] w-7 rounded-full bg-[#ff6900]"
+            ></span>
+
+            <div class="mt-8 grid grid-cols-2 gap-x-10 gap-y-3 text-white/70">
+              <a
+                href="#"
+                class="group flex items-center gap-2 transition-all duration-300 hover:translate-x-2 hover:text-[#ff6900]"
+              >
+                <i
+                  class="fa-solid fa-angle-right text-white/40 transition-colors duration-300 group-hover:text-[#ff6900]"
+                ></i>
+                <span>Home</span>
+              </a>
+
+              <a
+                href="#"
+                class="group flex items-center gap-2 transition-all duration-300 hover:translate-x-2 hover:text-[#ff6900]"
+              >
+                <i
+                  class="fa-solid fa-angle-right text-white/40 transition-colors duration-300 group-hover:text-[#ff6900]"
+                ></i>
+                <span>Maps</span>
+              </a>
+
+              <a
+                href="#"
+                class="group flex items-center gap-2 transition-all duration-300 hover:translate-x-2 hover:text-[#ff6900]"
+              >
+                <i
+                  class="fa-solid fa-angle-right text-white/40 transition-colors duration-300 group-hover:text-[#ff6900]"
+                ></i>
+                <span>City Store</span>
+              </a>
+
+              <a
+                href="#"
+                class="group flex items-center gap-2 transition-all duration-300 hover:translate-x-2 hover:text-[#ff6900]"
+              >
+                <i
+                  class="fa-solid fa-angle-right text-white/40 transition-colors duration-300 group-hover:text-[#ff6900]"
+                ></i>
+                <span>Careers</span>
+              </a>
+
+              <a
+                href="#"
+                class="group flex items-center gap-2 transition-all duration-300 hover:translate-x-2 hover:text-[#ff6900]"
+              >
+                <i
+                  class="fa-solid fa-angle-right text-white/40 transition-colors duration-300 group-hover:text-[#ff6900]"
+                ></i>
+                <span>News</span>
+              </a>
+
+              <a
+                href="#"
+                class="group flex items-center gap-2 transition-all duration-300 hover:translate-x-2 hover:text-[#ff6900]"
+              >
+                <i
+                  class="fa-solid fa-angle-right text-white/40 transition-colors duration-300 group-hover:text-[#ff6900]"
+                ></i>
+                <span>Employees</span>
+              </a>
+
+              <a
+                href="#"
+                class="group flex items-center gap-2 transition-all duration-300 hover:translate-x-2 hover:text-[#ff6900]"
+              >
+                <i
+                  class="fa-solid fa-angle-right text-white/40 transition-colors duration-300 group-hover:text-[#ff6900]"
+                ></i>
+                <span>Clients</span>
+              </a>
+
+              <a
+                href="#"
+                class="group flex items-center gap-2 transition-all duration-300 hover:translate-x-2 hover:text-[#ff6900]"
+              >
+                <i
+                  class="fa-solid fa-angle-right text-white/40 transition-colors duration-300 group-hover:text-[#ff6900]"
+                ></i>
+                <span>Teams</span>
+              </a>
+
+              <a
+                href="#"
+                class="group flex items-center gap-2 transition-all duration-300 hover:translate-x-2 hover:text-[#ff6900]"
+              >
+                <i
+                  class="fa-solid fa-angle-right text-white/40 transition-colors duration-300 group-hover:text-[#ff6900]"
+                ></i>
+                <span>Consultation</span>
+              </a>
+
+              <a
+                href="#"
+                class="group flex items-center gap-2 transition-all duration-300 hover:translate-x-2 hover:text-[#ff6900]"
+              >
+                <i
+                  class="fa-solid fa-angle-right text-white/40 transition-colors duration-300 group-hover:text-[#ff6900]"
+                ></i>
+                <span>Benefits</span>
+              </a>
+
+              <a
+                href="#"
+                class="group flex items-center gap-2 transition-all duration-300 hover:translate-x-2 hover:text-[#ff6900]"
+              >
+                <i
+                  class="fa-solid fa-angle-right text-white/40 transition-colors duration-300 group-hover:text-[#ff6900]"
+                ></i>
+                <span>Publicity</span>
+              </a>
+
+              <a
+                href="#"
+                class="group flex items-center gap-2 transition-all duration-300 hover:translate-x-2 hover:text-[#ff6900]"
+              >
+                <i
+                  class="fa-solid fa-angle-right text-white/40 transition-colors duration-300 group-hover:text-[#ff6900]"
+                ></i>
+                <span>Privacy</span>
+              </a>
+
+              <a
+                href="#"
+                class="group flex items-center gap-2 transition-all duration-300 hover:translate-x-2 hover:text-[#ff6900]"
+              >
+                <i
+                  class="fa-solid fa-angle-right text-white/40 transition-colors duration-300 group-hover:text-[#ff6900]"
+                ></i>
+                <span>Support</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Working Hours -->
+          <div>
+            <h3 class="text-xl font-extrabold">Working Hours</h3>
+            <span
+              class="mt-3 block h-[3px] w-7 rounded-full bg-[#ff6900]"
+            ></span>
+
+            <p class="mt-8 text-white/65 leading-7">
+              Our support available to help you 24 hours a day, seven days a
+              week.
+            </p>
+
+            <div class="mt-8 space-y-4 text-white/80">
+              <div class="flex items-center justify-between gap-4">
+                <span class="font-bold mr-1">Monday to Friday</span>
+                <span class="text-orange-900 ml-[-20px] text-xs pt-4"
+                  >-----</span
+                >
+                <span class="text-white/60">8AM – 4PM</span>
+              </div>
+
+              <div class="flex items-center justify-between gap-4">
+                <span class="font-bold">Saturday</span>
+                <span class="text-orange-900 ml-[-10px] text-xs pt-4"
+                  >--------------</span
+                >
+                <span class="text-white/60">8AM – 1PM</span>
+              </div>
+
+              <div class="flex items-center justify-between gap-4">
+                <span class="font-bold">Sunday</span>
+                <span class="text-orange-900 ml-[-20px] text-xs pt-4"
+                  >-------------------</span
+                >
+                <span class="text-white/60">Closed</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- bottom bar -->
+      <div
+        class="bg-[#202020] px-30 py-5 mt-14 border-t border-white/10 pt-6 flex flex-col gap-4 md:flex-row md:items-center md:justify-between absolute bottom-0 right-0 left-0"
+      >
+        <p class="text-white/50 text-sm">
+          Copyright © 2026 Xtra Theme. All Rights Reserved.
+        </p>
+
+        <!-- payment icons  -->
+        <div class="flex items-center gap-3 text-white/40 text-2xl">
+          <img
+            src="/assets/imgs/payment.png"
+            alt="payment"
+            class="w-[250px] h-full"
+          />
+        </div>
+      </div>
+    </footer>
+
+    <!-- Floating Email Button -->
+    <a
+      href="mailto:support@example.com"
+      class="fixed bottom-8 right-8 z-[999] w-10 h-10 rounded-full bg-[#ff6900] text-white flex items-center justify-center shadow-2xl hover:scale-110 hover:bg-white hover:text-orange-500 transition-all duration-300"
+      aria-label="Email"
+    >
+      <i class="fa-solid fa-envelope text-lg"></i>
+    </a>
+
+    <!-- Cookie Bar -->
+    <div
+      id="cookieBar"
+      class="fixed bottom-8 left-13 z-[998] bg-white text-white rounded-full px-2 py-3 flex items-center gap-4 shadow-2xl"
+    >
+      <!-- Cookie Icon -->
+      <div
+        class="w-9 h-9 rounded-full bg-[#fff] flex items-center justify-center text-orange-500"
+      >
+        <i class="fa-solid fa-cookie-bite"></i>
+      </div>
+
+      <span class="text-sm text-gray-700">
+        This website uses cookies to improve user experience.
+      </span>
+
+      <button
+        id="acceptCookies"
+        class="bg-[#ff6900] text-white px-5 py-3 rounded-full text-sm font-bold hover:bg-white hover:text-orange-500 transition"
+      >
+        Accept and close
+      </button>
+    </div>
+
+    <!-- CHAT WIDGET (bottom-left) -->
+    <div class="fixed bottom-5 left-5 z-[997]">
+      <!-- Floating Button -->
+      <button
+        id="chatBtn"
+        class="w-16 h-16 rounded-full bg-[#f7b500] flex items-center justify-center shadow-2xl hover:scale-105 transition"
+        aria-label="Toggle chat"
+      >
+        <i
+          id="chatIcon"
+          class="fa-regular fa-comment-dots text-2xl text-black"
+        ></i>
+        <i
+          id="chatArrow"
+          class="fa-solid fa-chevron-down text-2xl text-black"
+          style="display: none"
+        ></i>
+      </button>
+
+      <!-- Chat Panel -->
+      <div
+        id="chatPanel"
+        class="absolute bottom-[70px] left-0 w-[320px] h-[520px] rounded-[28px] overflow-hidden bg-white shadow-2xl opacity-0 pointer-events-none translate-y-2 transition-all duration-300"
+      >
+        <!-- BODY -->
+        <div id="chatHome" class="p-5 bg-[#f7b500] py-45">
+          <p class="text-sm text-black/70">
+            We are live and ready to chat with you now. Say something to start a
+            live chat.
+          </p>
+
+          <!-- New Conversation Card -->
+          <button
+            id="newConversation"
+            class="mt-5 w-full text-left bg-white rounded-2xl border border-black/10 p-4 shadow-sm hover:shadow-md transition"
+          >
+            <div class="flex items-center justify-between">
+              <div>
+                <p class="font-bold text-black">New Conversation</p>
+                <p class="text-xs text-black/50 mt-1">
+                  We typically reply in a few minutes
+                </p>
+              </div>
+              <i class="fa-solid fa-paper-plane text-black/40"></i>
+            </div>
+          </button>
+        </div>
+
+        <!-- MESSAGES VIEW -->
+        <div id="chatMessages" class="hidden h-[calc(520px-72px-78px)]">
+          <!-- header inside messages -->
+          <div
+            class="bg-[#f7b500] px-5 py-4 flex items-center justify-between relative"
+          >
+            <div class="flex items-center gap-3">
+              <button
+                id="backToHome"
+                class="text-black/80 hover:text-black transition"
+              >
+                <i class="fa-solid fa-arrow-left text-lg"></i>
+              </button>
+              <p class="font-bold text-black">Messages</p>
+            </div>
+
+            <!-- Menu button -->
+            <button
+              id="chatMenuBtn"
+              class="w-10 h-10 rounded-full bg-black/10 hover:bg-black/20 transition flex items-center justify-center text-black"
+              aria-label="Chat menu"
+            >
+              <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <!-- Dropdown -->
+            <div
+              id="chatMenu"
+              class="absolute top-[72px] right-5 w-[230px] bg-white rounded-2xl shadow-2xl border border-black/10 p-2 opacity-0 pointer-events-none translate-y-2 transition-all duration-200 z-[999]"
+            >
+              <button
+                class="w-full flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-black/5 text-left"
+              >
+                <i class="fa-regular fa-pen-to-square"></i>
+                <span class="text-sm font-medium">Change Name</span>
+              </button>
+
+              <button
+                class="w-full flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-black/5 text-left"
+              >
+                <i class="fa-regular fa-envelope"></i>
+                <span class="text-sm font-medium">Email transcript</span>
+              </button>
+
+              <button
+                id="soundToggle"
+                class="w-full flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-black/5 text-left"
+              >
+                <i id="soundIcon" class="fa-solid fa-volume-xmark"></i>
+                <span id="soundText" class="text-sm font-medium"
+                  >Sound Off</span
+                >
+              </button>
+
+              <button
+                class="w-full flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-black/5 text-left"
+              >
+                <i class="fa-solid fa-up-right-from-square"></i>
+                <span class="text-sm font-medium">Pop out widget</span>
+              </button>
+
+              <button
+                class="w-full flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-black/5 text-left"
+              >
+                <i class="fa-regular fa-comment"></i>
+                <span class="text-sm font-medium"
+                  >Add Chat to your website</span
+                >
+              </button>
+            </div>
+          </div>
+
+          <div class="p-5">
+            <p class="text-black font-semibold">Start a new chat</p>
+
+            <button
+              class="mt-4 w-full text-left bg-white rounded-2xl border border-[#f7b500]/70 p-4 shadow-sm hover:shadow-md transition"
+            >
+              <div class="flex items-center justify-between">
+                <div>
+                  <p class="font-bold text-black">New Conversation</p>
+                  <p class="text-xs text-black/50 mt-1">
+                    We typically reply in a few minutes
+                  </p>
+                </div>
+                <i class="fa-solid fa-paper-plane text-[#f7b500]"></i>
+              </div>
+            </button>
+
+            <div class="mt-8">
+              <p class="text-black font-semibold">Recent</p>
+              <p class="text-sm text-black/40 mt-3">No recent conversations</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- BOTTOM TABS -->
+        <div
+          class="absolute bottom-0 left-0 w-full bg-white border-t border-black/10"
+        >
+          <div class="flex">
+            <button
+              id="tabHome"
+              class="flex-1 py-4 flex items-center justify-center gap-2 text-[#f7b500] font-bold"
+            >
+              <i class="fa-solid fa-house"></i>
+            </button>
+
+            <button
+              id="tabMessages"
+              class="flex-1 py-4 flex items-center justify-center gap-2 text-black/40 hover:text-black transition"
+            >
+              <i class="fa-regular fa-message"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="../JS/script.js"></script>
+  </body>
+</html>

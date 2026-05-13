@@ -1,0 +1,2054 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bike Shop</title>
+    <!-- Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="CSS/style.css" />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              poppins: ["Poppins", "sans-serif"],
+            },
+            screens: {
+              s700: "700px",
+            },
+          },
+        },
+      };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+
+  <body class="bg-[#000000] text-white">
+    <header id="siteHeader" class="fixed left-0 w-full z-[60]">
+      <!--TOP BAR-->
+      <div
+        class="hidden 2xl:flex xl:flex lg:flex md:flex sm:flex bg-[#262626] justify-between items-center lg:px-6"
+      >
+        <img src="assets/imgs/logo.svg" alt="Logo" width="170" class="py-4" />
+
+        <p class="text-white">
+          Limited time offer, Buy XTRA WordPress theme only
+          <span class="font-bold">$39</span>
+        </p>
+
+        <button
+          class="bg-[#82B440] px-5 py-1 rounded-sm text-black size-fit cursor-pointer"
+        >
+          Download XTRA Theme
+        </button>
+      </div>
+
+      <!-- NAVBAR -->
+      <div
+        id="navWrapper"
+        class="bg-[#0b0b0b] transition-all duration-300 mt-[-60px] 2xl:mt-[-10px] xl:mt-[-10px] lg:mt-[-10px] md:mt-[-10px] sm:mt-[-10px]"
+      >
+        <div
+          id="mainNav"
+          class="mx-auto w-full flex justify-between items-center px-6 lg:px-10 py-7"
+        >
+          <!-- LOGO -->
+          <img
+            src="assets/imgs/bike-logo.png"
+            alt="bike-logo"
+            width="100px"
+            height="100px"
+            class="w-[70px] sm:w-[85px] lg:w-[100px] h-auto"
+          />
+
+          <!-- Mobile Menu Button -->
+          <button
+            id="menuBtn"
+            class="absolute right-30 sm:right-80 lg:hidden w-11 h-11 rounded-full bg-[#171717]/80 text-white flex items-center justify-center hover:text-orange-500 transition"
+            aria-label="Open menu"
+          >
+            <i class="fa-solid fa-bars text-lg"></i>
+          </button>
+
+          <!-- MOBILE MENU OVERLAY -->
+          <div
+            id="menuOverlay"
+            class="fixed inset-0 bg-black/60 backdrop-blur-sm opacity-0 pointer-events-none transition-all duration-300 z-[80]"
+          ></div>
+
+          <!-- MOBILE MENU PANEL (Right -> Left) -->
+          <aside
+            id="mobileMenu"
+            class="fixed top-0 right-0 h-screen w-[85%] max-w-[360px] bg-cover bg-center bg-no-repeat z-[90] translate-x-full transition-transform duration-300 will-change-transform shadow-2xl"
+            style="background-image: url(assets/imgs/post1-1.jpg)"
+          >
+            <div class="absolute inset-0 bg-black/70 pointer-events-none"></div>
+
+            <!-- Top bar inside menu -->
+            <div
+              class="flex items-center justify-between px-5 py-5 border-b border-white/10 relative z-10"
+            >
+              <img
+                src="assets/imgs/bike-logo.png"
+                alt="logo"
+                class="w-20 h-auto"
+              />
+
+              <!-- Close Button -->
+              <button
+                id="closeBtn"
+                class="w-11 h-11 rounded-full bg-white/10 text-white flex items-center justify-center transition-transform duration-300 hover:bg-white hover:text-orange-500"
+                aria-label="Close menu"
+              >
+                <i class="fa-solid fa-xmark text-xl"></i>
+              </button>
+            </div>
+
+            <!-- Menu links -->
+            <nav class="px-5 py-6 relative z-10">
+              <ul class="space-y-4 text-gray-200 font-medium">
+                <li>
+                  <a
+                    class="block py-2 hover:text-orange-500 transition"
+                    href="index.html"
+                    >Home</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="block py-2 hover:text-orange-500 transition"
+                    href="pages/about.html"
+                    >About</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="block py-2 hover:text-orange-500 transition"
+                    href="pages/services.html"
+                    >Services</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="block py-2 hover:text-orange-500 transition"
+                    href="pages/blog.html"
+                    >Blog</a
+                  >
+                </li>
+                <li>
+                  <a class="block py-2 hover:text-orange-500 transition" href="pages/shop.html"
+                    >Shop</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="block py-2 hover:text-orange-500 transition"
+                    href="pages/FQA.html"
+                    >FAQ</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="block py-2 hover:text-orange-500 transition"
+                    href="pages/contact.html"
+                    >Contact</a
+                  >
+                </li>
+              </ul>
+
+              <!-- Actions -->
+              <div class="mt-8 flex gap-3">
+                <button
+                  class="flex-1 text-white bg-[#ff6900] hover:bg-white hover:text-orange-500 rounded-full py-2 font-bold transition"
+                >
+                  Help & Service
+                </button>
+                <button
+                  class="w-12 h-12 rounded-full bg-[#171717]/80 text-white hover:text-orange-500 transition flex items-center justify-center"
+                  aria-label="Wishlist"
+                >
+                  <i class="fa-regular fa-heart"></i>
+                </button>
+                <button
+                  class="w-12 h-12 rounded-full bg-[#171717]/80 text-white hover:text-orange-500 transition flex items-center justify-center"
+                  aria-label="Cart"
+                >
+                  <i class="fa-solid fa-cart-arrow-down"></i>
+                </button>
+              </div>
+            </nav>
+          </aside>
+
+          <!-- Nav Links -->
+          <ul
+            class="hidden lg:flex items-center gap-8 font-medium text-gray-400"
+          >
+            <!-- Home  -->
+            <li class="relative group">
+              <a href="index.html" class="px-2 text-white"> Home </a>
+              <span
+                class="absolute -bottom-3 left-1/2 -translate-x-1/2 w-0 h-0 border-l-[6px] border-r-[6px] border-l-transparent border-r-transparent border-b-[6px] border-b-[#ff6900]"
+              ></span>
+            </li>
+
+            <!-- About -->
+            <li class="relative group">
+              <!-- About Link -->
+              <a
+                href="pages/about.html"
+                class="px-2 flex items-center gap-1 text-gray-400 group-hover:text-white transition"
+              >
+                About
+                <!-- Font Awesome arrow -->
+                <i
+                  class="fa-solid fa-chevron-down text-xs transition-transform duration-300 group-hover:rotate-180"
+                ></i>
+              </a>
+
+              <!-- Arrow ▲ under link -->
+              <span
+                class="absolute -bottom-3 left-1/2 -translate-x-1/2 w-0 h-0 opacity-0 border-l-[6px] border-r-[6px] border-l-transparent border-r-transparent border-b-[6px] border-b-[#ff6900] group-hover:opacity-100 transition"
+              ></span>
+
+              <!-- DROPDOWN -->
+              <div
+                class="absolute top-full left-1/2 -translate-x-1/2 mt-4 w-44 bg-[#ff6900] rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300"
+              >
+                <ul class="py-3 text-white text-sm font-medium">
+                  <li class="px-5 py-2 hover:text-black cursor-pointer">
+                    Submenu 1
+                  </li>
+                  <li class="px-5 py-2 hover:text-black cursor-pointer">
+                    Dropdown menu
+                    <i
+                      class="fa-solid fa-chevron-right transition-transform duration-300"
+                    ></i>
+                  </li>
+                  <li class="px-5 py-2 hover:text-black cursor-pointer">
+                    Submenu 2
+                  </li>
+                </ul>
+              </div>
+            </li>
+
+            <!-- Services -->
+            <li class="relative group">
+              <a
+                href="pages/services.html"
+                class="px-2 group-hover:text-white transition"
+              >
+                Services
+              </a>
+
+              <span
+                class="absolute -bottom-3 left-1/2 -translate-x-1/2 w-0 h-0 opacity-0 border-l-[6px] border-r-[6px] border-l-transparent border-r-transparent border-b-[6px] border-b-[#ff6900] group-hover:opacity-100 transition"
+              ></span>
+            </li>
+
+            <!-- Blog -->
+            <li class="relative group">
+              <a href="pages/blog.html" class="px-2 group-hover:text-white transition">
+                Blog
+              </a>
+
+              <span
+                class="absolute -bottom-3 left-1/2 -translate-x-1/2 w-0 h-0 opacity-0 border-l-[6px] border-r-[6px] border-l-transparent border-r-transparent border-b-[6px] border-b-[#ff6900] group-hover:opacity-100 transition"
+              ></span>
+            </li>
+
+            <!-- Shop -->
+            <li class="relative group">
+              <a href="pages/shop.html" class="px-2 group-hover:text-white transition">
+                Shop
+              </a>
+
+              <span
+                class="absolute -bottom-3 left-1/2 -translate-x-1/2 w-0 h-0 opacity-0 border-l-[6px] border-r-[6px] border-l-transparent border-r-transparent border-b-[6px] border-b-[#ff6900] group-hover:opacity-100 transition"
+              ></span>
+            </li>
+
+            <!-- FAQ -->
+            <li class="relative group">
+              <a
+                href="pages/FQA.html"
+                class="px-2 group-hover:text-white transition"
+              >
+                FAQ
+              </a>
+
+              <span
+                class="absolute -bottom-3 left-1/2 -translate-x-1/2 w-0 h-0 opacity-0 border-l-[6px] border-r-[6px] border-l-transparent border-r-transparent border-b-[6px] border-b-[#ff6900] group-hover:opacity-100 transition"
+              ></span>
+            </li>
+
+            <!-- Contact -->
+            <li class="relative group">
+              <a
+                href="pages/contact.html"
+                class="px-2 group-hover:text-white transition"
+              >
+                Contact
+              </a>
+
+              <span
+                class="absolute -bottom-3 left-1/2 -translate-x-1/2 w-0 h-0 opacity-0 border-l-[6px] border-r-[6px] border-l-transparent border-r-transparent border-b-[6px] border-b-[#ff6900] group-hover:opacity-100 transition"
+              ></span>
+            </li>
+          </ul>
+
+          <div class="flex items-center gap-2 sm:gap-3">
+            <!-- Button -->
+            <button
+              class="hidden sm:inline-flex items-center text-white bg-[#ff6900] hover:bg-white hover:text-orange-500 rounded-full px-5 lg:px-7 py-1 font-bold cursor-pointer transition"
+            >
+              <i
+                class="fas fa-bicycle cz_btn_header_icon_before"
+                aria-hidden="true"
+              ></i>
+              Help & Service
+            </button>
+
+            <!-- WhishList-->
+            <div
+              class="relative w-10 h-10 lg:w-12 lg:h-12 bg-[#171717]/80 rounded-full flex items-center justify-center text-white hover:text-orange-600 cursor-pointer transition"
+            >
+              <i class="fa-regular fa-heart"></i>
+
+              <!-- Counter -->
+              <span
+                class="absolute -top-1 -right-1 w-4 h-4 lg:w-5 lg:h-5 bg-[#ff6900] text-white text-[10px] lg:text-xs font-bold rounded-full flex items-center justify-center"
+              >
+                0
+              </span>
+            </div>
+
+            <!-- Cart -->
+            <div
+              class="relative w-10 h-10 lg:w-12 lg:h-12 bg-[#171717]/80 rounded-full flex items-center justify-center text-white hover:text-orange-600 cursor-pointer transition"
+            >
+              <i class="fa-solid fa-cart-arrow-down"></i>
+
+              <!-- Counter -->
+              <span
+                class="absolute -top-1 -right-1 w-4 h-4 lg:w-5 lg:h-5 bg-[#ff6900] text-white text-[10px] lg:text-xs font-bold rounded-full flex items-center justify-center"
+              >
+                0
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div id="headerSpacer"></div>
+
+    <!-- HERO -->
+    <section
+      class="bg-[#0b0b0b] pt-[96px] overflow-hidden sm:pt-[110px] lg:pt-[120px] 2xl:overflow-visible"
+    >
+      <div class="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
+        <div
+          class="grid items-center gap-12 py-10 sm:py-14 lg:min-h-[580px] lg:grid-cols-2 lg:gap-10 lg:py-16"
+        >
+          <!-- LEFT -->
+          <div class="max-w-full lg:max-w-[640px]">
+            <!-- Title -->
+            <h1
+              class="text-white font-extrabold leading-[1.05] text-[2.5rem] sm:text-5xl lg:text-6xl"
+            >
+              XTRA Bicycle is not just
+              <span class="block mt-2 text-orange-500">a Regular Bicycle</span>
+            </h1>
+
+            <!-- Description -->
+            <p
+              class="mt-6 max-w-full text-sm leading-7 text-white/50 sm:max-w-[520px] sm:text-base"
+            >
+              A bicycle, also called a pedal cycle, bike or cycle, is a
+              human-powered or motor-powered assisted.
+            </p>
+
+            <!-- Price + CTA -->
+            <div class="mt-8 flex flex-col items-start gap-6 sm:mt-10 sm:gap-8">
+              <div class="mb-0 text-4xl font-extrabold tracking-wide text-white">
+                <span>$</span>
+                1749
+              </div>
+
+              <div class="flex flex-col items-start gap-3 sm:flex-row sm:items-center sm:gap-4">
+                <!-- Button -->
+                <a
+                  href="#"
+                  class="w-full rounded-full bg-[#ff6900] px-7 py-4 text-center font-bold text-white transition hover:bg-white hover:text-orange-500 sm:w-auto"
+                >
+                  See full details
+                </a>
+
+                <span class="text-sm text-white/40"
+                  >Bike have different colors</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- RIGHT -->
+          <div class="relative flex min-h-[250px] items-center justify-center sm:min-h-[320px] lg:min-h-[580px] lg:justify-end">
+            <div
+              class="absolute left-1/2 top-1/2 w-[320px] max-w-none -translate-x-1/2 -translate-y-1/2 sm:w-[420px] lg:left-auto lg:right-[-160px] lg:top-[400px] lg:w-[560px] lg:translate-x-0"
+            >
+              <!-- background image -->
+              <img
+                src="assets/imgs/hero-bg-nature.png"
+                alt="Hero background"
+                class="h-auto w-full opacity-90"
+              />
+            </div>
+
+            <!-- Bike image on top -->
+            <img
+              id="bikeImg"
+              src="assets/imgs/bike-1.png"
+              alt="Bike"
+              class="relative z-10 w-full max-w-[360px] sm:max-w-[520px] lg:w-[850px] lg:max-w-none lg:translate-x-[-170px] lg:translate-y-[70px]"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About SECTION -->
+    <section id="bikeHero" class="relative text-white overflow-hidden">
+      <div class="mx-auto max-w-7xl px-3 lg:px-10">
+        <div
+          class="relative min-h-[640px] lg:min-h-[680px] flex flex-col lg:flex-row items-center"
+        >
+          <!-- CONTENT (right side) -->
+          <div class="ml-auto w-full lg:w-[52%] relative z-10 py-[70px]">
+            <h1
+              class="font-extrabold leading-[1.05] text-4xl sm:text-5xl lg:text-6xl"
+            >
+              XTRA Bicycle — It’s Not
+              <br />
+              Just a Bike,
+              <span class="text-orange-500">It’s a Revolution</span>
+            </h1>
+
+            <p class="mt-6 text-gray-400 leading-7 max-w-[560px]">
+              A bicycle, also called a pedal cycle, bike or cycle, is a human
+              powered or motor-powered assisted, pedal-driven, single-track
+              vehicle, having two wheels attached to a frame, one behind the
+              other.
+            </p>
+
+            <!-- FEATURES (Font Awesome) -->
+            <div class="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-5">
+              <!-- item -->
+              <div class="group flex items-center gap-4">
+                <span
+                  class="grid place-items-center w-11 h-11 rounded-full border-[#ff6a00] border-1 bg-black hover:bg-[#ff6a00] shrink-0 transition-transform duration-200 ease-out group-hover:scale-110"
+                >
+                  <!-- check icon -->
+                  <svg
+                    viewBox="0 0 24 24"
+                    class="w-6 h-6"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M20 7L10.5 16.5L4 10"
+                      stroke="white"
+                      stroke-width="3"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </span>
+                <p class="text-white font-semibold">Free test rides</p>
+              </div>
+
+              <div class="group flex items-center gap-4">
+                <span
+                  class="grid place-items-center w-11 h-11 rounded-full border-[#ff6a00] border-1 bg-black hover:bg-[#ff6a00] shrink-0 transition-transform duration-200 ease-out group-hover:scale-110"
+                >
+                  <svg
+                    viewBox="0 0 24 24"
+                    class="w-6 h-6"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M20 7L10.5 16.5L4 10"
+                      stroke="white"
+                      stroke-width="3"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </span>
+                <p class="text-white font-semibold">Expert repairs</p>
+              </div>
+
+              <div class="group flex items-center gap-4">
+                <span
+                  class="grid place-items-center w-11 h-11 rounded-full border-[#ff6a00] border-1 bg-black hover:bg-[#ff6a00] shrink-0 transition-transform duration-200 ease-out group-hover:scale-110"
+                >
+                  <svg
+                    viewBox="0 0 24 24"
+                    class="w-6 h-6"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M20 7L10.5 16.5L4 10"
+                      stroke="white"
+                      stroke-width="3"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </span>
+                <p class="text-white font-semibold">Custom builds</p>
+              </div>
+
+              <div class="group flex items-center gap-4">
+                <span
+                  class="grid place-items-center w-11 h-11 rounded-full border-[#ff6a00] border-1 bg-black hover:bg-[#ff6a00] shrink-0 transition-transform duration-200 ease-out group-hover:scale-110"
+                >
+                  <svg
+                    viewBox="0 0 24 24"
+                    class="w-6 h-6"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M20 7L10.5 16.5L4 10"
+                      stroke="white"
+                      stroke-width="3"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </span>
+                <p class="text-white font-semibold">Gear upgrades</p>
+              </div>
+
+              <div class="group flex items-center gap-4">
+                <span
+                  class="grid place-items-center w-11 h-11 rounded-full border-[#ff6a00] border-1 bg-black hover:bg-[#ff6a00] shrink-0 transition-transform duration-200 ease-out group-hover:scale-110"
+                >
+                  <svg
+                    viewBox="0 0 24 24"
+                    class="w-6 h-6"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M20 7L10.5 16.5L4 10"
+                      stroke="white"
+                      stroke-width="3"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </span>
+                <p class="text-white font-semibold">Electric bikes</p>
+              </div>
+
+              <div class="group flex items-center gap-4">
+                <span
+                  class="grid place-items-center w-11 h-11 rounded-full border-[#ff6a00] border-1 bg-black hover:bg-[#ff6a00] shrink-0 transition-transform duration-200 ease-out group-hover:scale-110"
+                >
+                  <svg
+                    viewBox="0 0 24 24"
+                    class="w-6 h-6"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M20 7L10.5 16.5L4 10"
+                      stroke="white"
+                      stroke-width="3"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </span>
+                <p class="text-white font-semibold">Free Shipping</p>
+              </div>
+            </div>
+          </div>
+          <!-- BIG IMAGE (overflows section) -->
+          <div
+            class="relative lg:absolute left-0 lg:left-[-300px] top-0 lg:top-1/2 translate-y-0 lg:-translate-y-1/2 w-full mt-10 lg:mt-0 flex justify-center lg:block overflow-visible"
+          >
+            <img
+              id="bikeSliderImg"
+              src="assets/imgs/bike-3-1.png"
+              alt="Bike"
+              class="w-[650px] h-[600px] lg:w-[1050px] max-w-none -ml-[140px] lg:-ml-[220px] transition-transform duration-700 ease-out will-change-transform"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ORANGE BOX -->
+    <section class="bg-black py-24">
+      <div class="mx-auto max-w-6xl px-6">
+        <div
+          class="rounded-[40px] bg-[#ff6900] px-8 py-20 text-center shadow-[0_30px_90px_rgba(0,0,0,0.55)]"
+        >
+          <h2
+            class="text-white font-extrabold text-4xl md:text-6xl leading-tight"
+          >
+            It's a great day for a ride.
+          </h2>
+
+          <p class="mt-6 text-white/80 max-w-3xl mx-auto text-lg">
+            A bicycle, also called a pedal cycle, bike or cycle, is a human
+            powered
+          </p>
+
+          <!-- BUTTON -->
+          <a
+            href="#"
+            class="group inline-flex items-center justify-center gap-3 mt-10 rounded-full bg-black text-white font-bold px-10 py-4 transition-all duration-300 ease-out hover:bg-white hover:text-[#ff6900]"
+          >
+            <span>Explore Products</span>
+
+            <!-- Font Awesome Arrow (hidden until hover) -->
+            <i
+              class="fa-solid fa-arrow-right opacity-0 -translate-x-2 transition-all duration-300 ease-out group-hover:opacity-100 group-hover:translate-x-0"
+              aria-hidden="true"
+            ></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- BESTSELLERS SECTION -->
+    <section class="relative bg-black text-white overflow-hidden py-20">
+      <div class="pointer-events-none absolute inset-x-0 top-[40px] z-0">
+        <div class="title-marquee w-screen">
+          <div class="title-marquee__track italic">
+            <span class="title-marquee__text">
+              MEET OUR BESTSELLERS MEET OUR BESTSELLERS MEET OUR BESTSELLERS
+              MEET OUR BESTSELLERS MEET OUR BESTSELLERS MEET OUR BESTSELLERS
+            </span>
+            <span class="title-marquee__text">
+              MEET OUR BESTSELLERS MEET OUR BESTSELLERS MEET OUR BESTSELLERS
+              MEET OUR BESTSELLERS MEET OUR BESTSELLERS MEET OUR BESTSELLERS
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <div class="relative mx-auto max-w-7xl px-6 lg:px-10">
+        <!-- TITLE -->
+        <div class="relative text-center mb-14 py-6">
+          <h2
+            class="relative z-10 text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight"
+          >
+            Meet our <span class="text-[#ff6900]">Bestsellers</span>
+          </h2>
+        </div>
+
+        <!-- Cards -->
+        <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+          <!-- Card 1 (WITH SALE + MINI MARQUEE) -->
+          <article
+            class="group relative overflow-visible rounded-tr-[90px] bg-[#111] shadow-[0_22px_70px_rgba(0,0,0,0.55)]"
+          >
+            <!-- Image area -->
+            <div class="relative h-[260px] overflow-visible">
+              <img
+                src="assets/imgs/bike-pr10-600x392.png"
+                alt="Bike 1"
+                class="pl-5 h-full w-full object-cover opacity-95 transition duration-500 ease-out group-hover:scale-[1.12] group-hover:-translate-y-2"
+              />
+
+              <!-- SALE BADGES (top-left) -->
+              <div class="absolute left-4 top-4 z-20 flex flex-col gap-2">
+                <span
+                  class="inline-flex w-fit rounded-full rounded-tl-none bg-[#ff6900] px-4 py-2 text-sm font-extrabold text-white shadow-[0_14px_30px_rgba(0,0,0,0.35)]"
+                >
+                  Sale!
+                </span>
+                <span
+                  class="inline-flex w-fit rounded-full rounded-tl-none bg-[#ff6900] px-4 py-2 text-sm font-extrabold text-white shadow-[0_14px_30px_rgba(0,0,0,0.35)]"
+                >
+                  22%
+                </span>
+              </div>
+
+              <!-- Hover icons (center) -->
+              <div
+                class="absolute inset-0 flex items-center justify-center gap-3 opacity-0 translate-y-2 transition-all duration-300 ease-out group-hover:opacity-100 group-hover:translate-y-0"
+              >
+                <div class="relative">
+                  <button
+                    class="icon-btn"
+                    type="button"
+                    aria-label="Add to wishlist"
+                  >
+                    <i class="fa-regular fa-heart"></i>
+                  </button>
+                  <span class="tooltip">Add to wishlist</span>
+                </div>
+
+                <div class="relative">
+                  <button class="icon-btn" type="button" aria-label="Compare">
+                    <i class="fa-solid fa-arrows-rotate"></i>
+                  </button>
+                  <span class="tooltip">Compare</span>
+                </div>
+
+                <div class="relative">
+                  <button
+                    class="icon-btn"
+                    type="button"
+                    aria-label="Quick view"
+                  >
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                  </button>
+                  <span class="tooltip">Quick view</span>
+                </div>
+              </div>
+
+              <!-- MINI MARQUEE (under image) -->
+              <div
+                class="product-marquee absolute left-4 right-4 bottom-4 z-10 rounded-none px-4 py-2 bg-gradient-to-r from-[#ff6900]/25 via-white/10 to-[#ff6900]/25 border border-white/10 backdrop-blur-md shadow-[0_16px_40px_rgba(0,0,0,0.35)]"
+              >
+                <div class="product-marquee__track">
+                  <span class="product-marquee__text text-white/90">
+                    Discover 2 Step Thru Bike pr10 600x392 • HOT SALE 22% OFF ⚡
+                    HOT SALE 22% OFF ⚡ HOT SALE 22% OFF ⚡
+                  </span>
+                  <span class="product-marquee__text text-white/90">
+                    Discover 2 Step Thru Bike pr10 600x392 • HOT SALE 22% OFF ⚡
+                    HOT SALE 22% OFF ⚡ HOT SALE 22% OFF ⚡
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Content -->
+            <div class="px-7 pb-7 pt-6">
+              <h3
+                class="text-2xl font-extrabold text-white transition-colors duration-300 group-hover:text-[#ff6900]"
+              >
+                Discover 2 Step-Thru
+              </h3>
+
+              <p class="mt-2 text-white/55">Premium Sets</p>
+
+              <div class="mt-5 flex items-center justify-between gap-4">
+                <div class="text-2xl font-extrabold text-[#ff6900]">
+                  <span class="text-[20px] line-through">$980</span> $768
+                </div>
+
+                <button
+                  class="inline-flex items-center gap-2 rounded-full px-6 py-3 font-bold bg-white/10 text-white/35 cursor-not-allowed transition-all duration-300 group-hover:bg-white group-hover:text-[#ff6900] group-hover:cursor-pointer hover:text-white hover:bg-[#ff6900]"
+                  type="button"
+                >
+                  <i class="fa-solid fa-cart-shopping"></i>
+                  Add to cart
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 2 -->
+          <article
+            class="group relative overflow-visible rounded-tr-[90px] bg-[#111] shadow-[0_22px_70px_rgba(0,0,0,0.55)]"
+          >
+            <div class="relative h-[260px] overflow-visible">
+              <img
+                src="assets/imgs/bike-pr11-600x392.png"
+                alt="Bike 2"
+                class="pl-5 h-full w-full object-cover opacity-95 transition duration-500 ease-out group-hover:scale-[1.12] group-hover:-translate-y-2"
+              />
+
+              <div
+                class="absolute inset-0 flex items-center justify-center gap-3 opacity-0 translate-y-2 transition-all duration-300 ease-out group-hover:opacity-100 group-hover:translate-y-0"
+              >
+                <div class="relative">
+                  <button
+                    class="icon-btn"
+                    type="button"
+                    aria-label="Add to wishlist"
+                  >
+                    <i class="fa-regular fa-heart"></i>
+                  </button>
+                  <span class="tooltip">Add to wishlist</span>
+                </div>
+                <div class="relative">
+                  <button class="icon-btn" type="button" aria-label="Compare">
+                    <i class="fa-solid fa-arrows-rotate"></i>
+                  </button>
+                  <span class="tooltip">Compare</span>
+                </div>
+                <div class="relative">
+                  <button
+                    class="icon-btn"
+                    type="button"
+                    aria-label="Quick view"
+                  >
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                  </button>
+                  <span class="tooltip">Quick view</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="px-7 pb-7 pt-6">
+              <h3
+                class="text-2xl font-extrabold text-white transition-colors duration-300 group-hover:text-[#ff6900]"
+              >
+                Urban Street Bike
+              </h3>
+              <p class="mt-2 text-white/55">Cannondale</p>
+
+              <div class="mt-5 flex items-center justify-between gap-4">
+                <div class="text-2xl font-extrabold text-[#ff6900]">$540</div>
+
+                <button
+                  class="inline-flex items-center gap-2 rounded-full px-6 py-3 font-bold bg-white/10 text-white/35 cursor-not-allowed transition-all duration-300 group-hover:bg-white group-hover:text-[#ff6900] group-hover:cursor-pointer hover:text-white hover:bg-[#ff6900]"
+                  type="button"
+                >
+                  <i class="fa-solid fa-cart-shopping"></i>
+                  Add to cart
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 3 -->
+          <article
+            class="group relative overflow-visible rounded-tr-[90px] bg-[#111] shadow-[0_22px_70px_rgba(0,0,0,0.55)]"
+          >
+            <div class="relative h-[260px] overflow-visible">
+              <img
+                src="assets/imgs/bike-pr3-600x392.png"
+                alt="Bike 3"
+                class="pl-5 h-full w-full object-cover opacity-95 transition duration-500 ease-out group-hover:scale-[1.12] group-hover:-translate-y-2"
+              />
+
+              <div
+                class="absolute inset-0 flex items-center justify-center gap-3 opacity-0 translate-y-2 transition-all duration-300 ease-out group-hover:opacity-100 group-hover:translate-y-0"
+              >
+                <div class="relative">
+                  <button
+                    class="icon-btn"
+                    type="button"
+                    aria-label="Add to wishlist"
+                  >
+                    <i class="fa-regular fa-heart"></i>
+                  </button>
+                  <span class="tooltip">Add to wishlist</span>
+                </div>
+                <div class="relative">
+                  <button class="icon-btn" type="button" aria-label="Compare">
+                    <i class="fa-solid fa-arrows-rotate"></i>
+                  </button>
+                  <span class="tooltip">Compare</span>
+                </div>
+                <div class="relative">
+                  <button
+                    class="icon-btn"
+                    type="button"
+                    aria-label="Quick view"
+                  >
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                  </button>
+                  <span class="tooltip">Quick view</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="px-7 pb-7 pt-6">
+              <h3
+                class="text-2xl font-extrabold text-white transition-colors duration-300 group-hover:text-[#ff6900]"
+              >
+                Gravity Pro Bike
+              </h3>
+              <p class="mt-2 text-white/55">Cannondale</p>
+
+              <div class="mt-5 flex items-center justify-between gap-4">
+                <div class="text-2xl font-extrabold text-[#ff6900]">$799</div>
+
+                <button
+                  class="inline-flex items-center gap-2 rounded-full px-6 py-3 font-bold bg-white/10 text-white/35 cursor-not-allowed transition-all duration-300 group-hover:bg-white group-hover:text-[#ff6900] group-hover:cursor-pointer hover:text-white hover:bg-[#ff6900]"
+                  type="button"
+                >
+                  <i class="fa-solid fa-cart-shopping"></i>
+                  Add to cart
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 4 -->
+          <article
+            class="group relative overflow-visible rounded-tr-[90px] bg-[#111] shadow-[0_22px_70px_rgba(0,0,0,0.55)]"
+          >
+            <div class="relative h-[260px] overflow-visible">
+              <img
+                src="assets/imgs/bike-pr6-600x392.png"
+                alt="Bike 4"
+                class="pl-5 h-full w-full object-cover opacity-95 transition duration-500 ease-out group-hover:scale-[1.12] group-hover:-translate-y-2"
+              />
+
+              <div
+                class="absolute inset-0 flex items-center justify-center gap-3 opacity-0 translate-y-2 transition-all duration-300 ease-out group-hover:opacity-100 group-hover:translate-y-0"
+              >
+                <div class="relative">
+                  <button
+                    class="icon-btn"
+                    type="button"
+                    aria-label="Add to wishlist"
+                  >
+                    <i class="fa-regular fa-heart"></i>
+                  </button>
+                  <span class="tooltip">Add to wishlist</span>
+                </div>
+                <div class="relative">
+                  <button class="icon-btn" type="button" aria-label="Compare">
+                    <i class="fa-solid fa-arrows-rotate"></i>
+                  </button>
+                  <span class="tooltip">Compare</span>
+                </div>
+                <div class="relative">
+                  <button
+                    class="icon-btn"
+                    type="button"
+                    aria-label="Quick view"
+                  >
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                  </button>
+                  <span class="tooltip">Quick view</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="px-7 pb-7 pt-6">
+              <h3
+                class="text-2xl font-extrabold text-white transition-colors duration-300 group-hover:text-[#ff6900]"
+              >
+                Roadster City Bike
+              </h3>
+              <p class="mt-2 text-white/55">Cannondale</p>
+
+              <div class="mt-5 flex items-center justify-between gap-4">
+                <div class="text-2xl font-extrabold text-[#ff6900]">$620</div>
+
+                <button
+                  class="inline-flex items-center gap-2 rounded-full px-6 py-3 font-bold bg-white/10 text-white/35 cursor-not-allowed transition-all duration-300 group-hover:bg-white group-hover:text-[#ff6900] group-hover:cursor-pointer hover:text-white hover:bg-[#ff6900]"
+                  type="button"
+                >
+                  <i class="fa-solid fa-cart-shopping"></i>
+                  Add to cart
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 5 -->
+          <article
+            class="group relative overflow-visible rounded-tr-[90px] bg-[#111] shadow-[0_22px_70px_rgba(0,0,0,0.55)]"
+          >
+            <div class="relative h-[260px] overflow-visible">
+              <img
+                src="assets/imgs/bike-pr7-600x392.png"
+                alt="Bike 5"
+                class="pl-5 h-full w-full object-cover opacity-95 transition duration-500 ease-out group-hover:scale-[1.12] group-hover:-translate-y-2"
+              />
+
+              <div
+                class="absolute inset-0 flex items-center justify-center gap-3 opacity-0 translate-y-2 transition-all duration-300 ease-out group-hover:opacity-100 group-hover:translate-y-0"
+              >
+                <div class="relative">
+                  <button
+                    class="icon-btn"
+                    type="button"
+                    aria-label="Add to wishlist"
+                  >
+                    <i class="fa-regular fa-heart"></i>
+                  </button>
+                  <span class="tooltip">Add to wishlist</span>
+                </div>
+                <div class="relative">
+                  <button class="icon-btn" type="button" aria-label="Compare">
+                    <i class="fa-solid fa-arrows-rotate"></i>
+                  </button>
+                  <span class="tooltip">Compare</span>
+                </div>
+                <div class="relative">
+                  <button
+                    class="icon-btn"
+                    type="button"
+                    aria-label="Quick view"
+                  >
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                  </button>
+                  <span class="tooltip">Quick view</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="px-7 pb-7 pt-6">
+              <h3
+                class="text-2xl font-extrabold text-white transition-colors duration-300 group-hover:text-[#ff6900]"
+              >
+                Mountain Trail Bike
+              </h3>
+              <p class="mt-2 text-white/55">Cannondale</p>
+
+              <div class="mt-5 flex items-center justify-between gap-4">
+                <div class="text-2xl font-extrabold text-[#ff6900]">$699</div>
+
+                <button
+                  class="inline-flex items-center gap-2 rounded-full px-6 py-3 font-bold bg-white/10 text-white/35 cursor-not-allowed transition-all duration-300 group-hover:bg-white group-hover:text-[#ff6900] group-hover:cursor-pointer hover:text-white hover:bg-[#ff6900]"
+                  type="button"
+                >
+                  <i class="fa-solid fa-cart-shopping"></i>
+                  Add to cart
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 6 -->
+          <article
+            class="group relative overflow-visible rounded-tr-[90px] bg-[#111] shadow-[0_22px_70px_rgba(0,0,0,0.55)]"
+          >
+            <div class="relative h-[260px] overflow-visible">
+              <img
+                src="assets/imgs/bike-pr8-600x392.png"
+                alt="Bike 6"
+                class="pl-5 h-full w-full object-cover opacity-95 transition duration-500 ease-out group-hover:scale-[1.12] group-hover:-translate-y-2"
+              />
+
+              <div
+                class="absolute inset-0 flex items-center justify-center gap-3 opacity-0 translate-y-2 transition-all duration-300 ease-out group-hover:opacity-100 group-hover:translate-y-0"
+              >
+                <div class="relative">
+                  <button
+                    class="icon-btn"
+                    type="button"
+                    aria-label="Add to wishlist"
+                  >
+                    <i class="fa-regular fa-heart"></i>
+                  </button>
+                  <span class="tooltip">Add to wishlist</span>
+                </div>
+                <div class="relative">
+                  <button class="icon-btn" type="button" aria-label="Compare">
+                    <i class="fa-solid fa-arrows-rotate"></i>
+                  </button>
+                  <span class="tooltip">Compare</span>
+                </div>
+                <div class="relative">
+                  <button
+                    class="icon-btn"
+                    type="button"
+                    aria-label="Quick view"
+                  >
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                  </button>
+                  <span class="tooltip">Quick view</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="px-7 pb-7 pt-6">
+              <h3
+                class="text-2xl font-extrabold text-white transition-colors duration-300 group-hover:text-[#ff6900]"
+              >
+                Speed Carbon Bike
+              </h3>
+              <p class="mt-2 text-white/55">Cannondale</p>
+
+              <div class="mt-5 flex items-center justify-between gap-4">
+                <div class="text-2xl font-extrabold text-[#ff6900]">$585</div>
+
+                <button
+                  class="inline-flex items-center gap-2 rounded-full px-6 py-3 font-bold bg-white/10 text-white/35 cursor-not-allowed transition-all duration-300 group-hover:bg-white group-hover:text-[#ff6900] group-hover:cursor-pointer hover:text-white hover:bg-[#ff6900]"
+                  type="button"
+                >
+                  <i class="fa-solid fa-cart-shopping"></i>
+                  Add to cart
+                </button>
+              </div>
+            </div>
+          </article>
+        </div>
+        <!-- Bottom CTA Button -->
+        <div class="mt-16 flex justify-center">
+          <a
+            href="#"
+            class="xtra-cta group relative inline-flex items-center h-[74px] px-9 pr-10 pl-[92px] select-none overflow-hidden"
+          >
+            <!-- morphing orange bg (from circle to full pill) -->
+            <span
+              class="xtra-cta__bg absolute inset-y-0 left-0 w-[74px] rounded-full bg-[#ff6900] transition-all duration-400 ease-[cubic-bezier(.2,.9,.2,1)] group-hover:w-full"
+            ></span>
+
+            <!-- icon bubble (same size as bg start) -->
+            <span
+              class="absolute left-0 top-0 h-[74px] w-[74px] grid place-items-center z-10"
+            >
+              <i
+                class="fa-solid fa-bicycle text-black text-xl transition-colors duration-300 group-hover:text-white"
+              ></i>
+            </span>
+
+            <!-- normal text -->
+            <span
+              class="relative z-10 font-extrabold tracking-[0.14em] uppercase text-[#ff6900] transition-all duration-300 ease-out group-hover:opacity-0 group-hover:translate-x-2 group-hover:blur-[3px]"
+            >
+              View all products
+            </span>
+
+            <!-- hover text -->
+            <span
+              class="absolute left-[92px] right-8 z-10 font-extrabold tracking-[0.14em] uppercase text-white opacity-0 -translate-x-2 transition-all duration-300 ease-out group-hover:opacity-100 group-hover:translate-x-0 group-hover:blur-0"
+            >
+              Let’s see new bikes
+            </span>
+          </a>
+        </div>
+
+        <style>
+          /* optional: tiny glow + smoother feel like video */
+          .xtra-cta {
+            border-radius: 9999px;
+          }
+          .xtra-cta:hover {
+            filter: drop-shadow(0 18px 40px rgba(255, 105, 0, 0.22));
+          }
+        </style>
+      </div>
+    </section>
+
+    <!-- CATEGORY CARDS SECTION -->
+    <section class="bg-black text-white py-16">
+      <div class="mx-auto max-w-7xl px-6 lg:px-10">
+        <div class="grid gap-10 md:grid-cols-2">
+          <!-- Card 1 -->
+          <article class="cat-card group relative">
+            <div id="bike-1" class="relative">
+              <!-- Image -->
+              <div class="relative overflow-hidden rounded-[28px] bg-[#111]">
+                <img
+                  src="assets/imgs/package-1.jpg"
+                  alt="Electric bicycles"
+                  class="h-[520px] w-full object-cover object-center opacity-95"
+                />
+              </div>
+            </div>
+            <!-- Bottom info box -->
+            <div
+              class="absolute left-8 right-8 bottom-8 rounded-[22px] bg-[#262626]/90 backdrop-blur-md px-10 py-9 shadow-[0_22px_60px_rgba(0,0,0,0.55)]"
+            >
+              <p class="text-[#ff6900] text-lg font-medium mb-2">
+                +120 bicycles
+              </p>
+              <h3 class="text-4xl font-extrabold leading-tight">
+                Electric bicycles
+              </h3>
+            </div>
+
+            <!-- Right button (NOT affected by card hover tilt) -->
+            <a
+              href="#"
+              class="cat-btn absolute right-8 bottom-8 z-10 grid h-[150px] w-[90px] place-items-center rounded-[22px] rounded-tl-none rounded-bl-none bg-[#ff6900] transition-colors duration-300 ease-out hover:bg-white hover:text-orange-500"
+              aria-label="Open category"
+            >
+              <span
+                class="text-4xl font-light text-white hover:text-orange-500 transition-colors duration-300 ease-out cat-arrow"
+                ><i class="fa-solid fa-chevron-right"></i>
+              </span>
+            </a>
+          </article>
+
+          <!-- Card 2 -->
+          <article class="cat-card group relative">
+            <div id="bike-2" class="relative">
+              <!-- Image -->
+              <div class="relative overflow-hidden rounded-[28px] bg-[#111]">
+                <img
+                  src="assets/imgs/package-2.jpg"
+                  alt="Electric bicycles"
+                  class="h-[520px] w-full object-cover object-center opacity-95"
+                />
+              </div>
+            </div>
+            <!-- Bottom info box -->
+            <div
+              class="absolute left-8 right-8 bottom-8 rounded-[22px] bg-[#262626]/90 backdrop-blur-md px-10 py-9 shadow-[0_22px_60px_rgba(0,0,0,0.55)]"
+            >
+              <p class="text-[#ff6900] text-lg font-medium mb-2">
+                +120 bicycles
+              </p>
+              <h3 class="text-4xl font-extrabold leading-tight">
+                Children bicycles
+              </h3>
+            </div>
+
+            <!-- Right button (NOT affected by card hover tilt) -->
+            <a
+              href="#"
+              class="cat-btn absolute right-8 bottom-8 z-10 grid h-[150px] w-[90px] place-items-center rounded-[22px] rounded-tl-none rounded-bl-none bg-[#ff6900] transition-colors duration-300 ease-out hover:bg-white hover:text-orange-500"
+              aria-label="Open category"
+            >
+              <span
+                class="text-4xl font-light text-white hover:text-orange-500 transition-colors duration-300 ease-out cat-arrow"
+                ><i class="fa-solid fa-chevron-right"></i>
+              </span>
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIAL SECTION -->
+    <section class="relative text-white overflow-hidden py-16 lg:py-24">
+      <div class="mx-auto max-w-7xl px-6 lg:px-10">
+        <div
+          class="grid min-h-[580px] items-center py-16 lg:grid-cols-2 gap-10"
+        >
+          <!--  LEFT  -->
+          <div class="relative">
+            <!-- Title -->
+            <h2 class="text-4xl sm:text-5xl font-extrabold tracking-tight">
+              What say <span class="text-[#ff6900]">Pro People</span>
+            </h2>
+
+            <!-- Slider -->
+            <div class="mt-10">
+              <div class="overflow-hidden">
+                <div
+                  id="tTrack"
+                  class="flex transition-transform duration-500 ease-[cubic-bezier(.2,.9,.2,1)]"
+                  style="transform: translateX(0%)"
+                >
+                  <!-- Slide 1 -->
+                  <article class="w-full shrink-0 pr-2">
+                    <!-- profile -->
+                    <div class="flex items-center gap-4">
+                      <div
+                        class="h-[70px] w-[70px] rounded-full bg-white/10 p-[5px]"
+                      >
+                        <img
+                          src="assets/imgs/t6-100x100.jpg"
+                          alt="Antonio"
+                          class="h-full w-full rounded-full rounded-br-none object-cover"
+                        />
+                      </div>
+                      <div>
+                        <p class="text-xl font-extrabold">Antonio Benz</p>
+                        <p class="text-sm font-semibold text-[#ff6900]">
+                          Bike designer
+                        </p>
+                      </div>
+                    </div>
+
+                    <!-- text -->
+                    <p
+                      class="mt-6 max-w-xl text-[18px] leading-[1.9] text-white/65"
+                    >
+                      A bicycle, also called a pedal cycle, bike or cycle, is a
+                      human-powered or motor-powered assisted, pedal-driven,
+                      single-track vehicle, having two wheels attached to a
+                      frame, one behind the other. A bicycle rider is called a
+                      cyclist, or bicyclist.
+                    </p>
+                  </article>
+
+                  <!-- Slide 2 -->
+                  <article class="w-full shrink-0 pl-2">
+                    <div class="flex items-center gap-4">
+                      <div
+                        class="h-[70px] w-[70px] rounded-full bg-white/10 p-[5px]"
+                      >
+                        <img
+                          src="assets/imgs/t4-100x100.jpg"
+                          alt="Sarah"
+                          class="h-full w-full rounded-full rounded-br-none object-cover"
+                        />
+                      </div>
+                      <div>
+                        <p class="text-xl font-extrabold">Sarah Lisgun</p>
+                        <p class="text-sm font-semibold text-[#ff6900]">
+                          Bike Rider
+                        </p>
+                      </div>
+                    </div>
+
+                    <p
+                      class="mt-6 max-w-xl text-[18px] leading-[1.9] text-white/65"
+                    >
+                      Cycling is freedom. The smooth ride, the quiet power, and
+                      the design details make the experience feel premium. It’s
+                      not just transport—it’s a lifestyle and a daily boost of
+                      energy.
+                    </p>
+                  </article>
+                </div>
+              </div>
+
+              <!-- big outlined tile left -->
+              <div
+                class="absolute left-[-90px] top-0 h-[170px] w-[210px] skew-x-[-10deg] border border-white/20 bg-white/0"
+              ></div>
+              <div
+                class="absolute left-[140px] top-0 h-[170px] w-[210px] skew-x-[-10deg] border border-white/20 bg-white/0"
+              ></div>
+
+              <!-- Decorative outlined tiles + orange quotes -->
+              <div class="relative mt-10 h-[170px] max-w-xl">
+                <!-- orange quote on bottom-left of center tile -->
+                <div class="absolute left-[30px] bottom-[90px] z-10 flex gap-2">
+                  <img
+                    src="assets/imgs/quote.png"
+                    alt=""
+                    class="w-full h-full"
+                  />
+                </div>
+
+                <!-- Arrows (bottom right) -->
+                <div
+                  class="absolute right-0 bottom-[120px] flex items-center gap-8"
+                >
+                  <button
+                    id="prevBtn"
+                    type="button"
+                    class="tArrow tArrow--disabled text-3xl"
+                    aria-label="Previous"
+                  >
+                    <i class="fa-solid fa-arrow-left"></i>
+                  </button>
+
+                  <button
+                    id="nextBtn"
+                    type="button"
+                    class="tArrow text-3xl"
+                    aria-label="Next"
+                  >
+                    <i class="fa-solid fa-arrow-right"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!--  RIGHT  -->
+          <div class="relative">
+            <div class="relative h-[630px] w-full overflow-visible">
+              <img
+                src="assets/imgs/special-offer.png"
+                alt="Bike"
+                class="absolute right-[-160px] top-[200px] -translate-y-1/2 w-full h-[600px] z-10"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SUBSCRIBE -->
+    <section class="relative bg-black text-white overflow-hidden py-20">
+      <!-- moving outlined title in background -->
+      <div class="pointer-events-none absolute inset-x-0 top-[40px] z-0">
+        <div class="title-marquee w-screen">
+          <div class="title-marquee__track italic">
+            <span class="title-marquee__text">
+              MEET OUR SPECIALBIKES MEET OUR SPECIALBIKES MEET OUR SPECIALBIKES
+              MEET OUR SPECIALBIKES MEET OUR SPECIALBIKES MEET OUR SPECIALBIKES
+              MEET OUR SPECIALBIKES MEET OUR SPECIALBIKES
+            </span>
+            <span class="title-marquee__text">
+              MEET OUR SPECIALBIKES MEET OUR SPECIALBIKES MEET OUR SPECIALBIKES
+              MEET OUR SPECIALBIKES MEET OUR SPECIALBIKES MEET OUR SPECIALBIKES
+              MEET OUR SPECIALBIKES MEET OUR SPECIALBIKES
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <div class="relative mx-auto max-w-7xl px-6 lg:px-10">
+        <!-- TITLE -->
+        <div class="relative text-center mb-10 py-6">
+          <h2
+            class="relative z-10 text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight"
+          >
+            Get your own <span class="text-[#ff6900]">Special Bike</span>
+          </h2>
+
+          <p class="text-white/45 text-lg sm:text-xl mt-6">
+            Subscribe to our newsletter to get new Bike Offers
+          </p>
+        </div>
+
+        <!-- FORM (like screenshot) -->
+        <form class="relative mx-auto max-w-4xl">
+          <div
+            class="relative flex items-center rounded-full bg-white/10 backdrop-blur-md shadow-[0_25px_70px_rgba(0,0,0,0.55)] border border-white/10 px-5 py-3 sm:py-4"
+          >
+            <!-- input -->
+            <input
+              type="email"
+              placeholder="Enter your email ..."
+              class="w-full bg-transparent outline-none text-white placeholder:text-white/45 text-base sm:text-lg px-3 py-2 pr-[160px]"
+            />
+
+            <!-- button inside -->
+            <button
+              type="submit"
+              class="absolute right-3 top-1/2 -translate-y-1/2 inline-flex items-center gap-2 rounded-full bg-[#ff6900] text-white font-extrabold uppercase px-7 py-3 sm:py-3.5 shadow-[0_16px_40px_rgba(255,105,0,0.25)] transition hover:bg-white hover:text-orange-500"
+            >
+              <i class="fa-solid fa-envelope"></i>
+              Join now
+            </button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- TOP CONTACT BAR (above footer) -->
+    <section class="relative text-white pt-24 mb-[-70px]">
+      <div class="mx-auto max-w-7xl px-6 lg:px-10">
+        <div
+          class="rounded-[70px] bg-[#202020] border border-white/10 backdrop-blur-md shadow-[0_30px_90px_rgba(0,0,0,0.6)] px-10 py-30"
+        >
+          <div class="grid gap-10 md:grid-cols-3 items-center text-center">
+            <!-- item 1 -->
+            <div class="relative">
+              <p class="text-[#ff6900] text-sm font-semibold">
+                Pre-sale Questions
+              </p>
+              <p
+                class="mt-3 text-2xl font-extrabold hover:text-orange-500 cursor-pointer"
+              >
+                help@xtrabicycle.com
+              </p>
+
+              <!-- divider -->
+              <span
+                class="hidden md:block absolute right-[-20px] top-1/2 -translate-y-1/2 h-10 w-px bg-white/10"
+              ></span>
+            </div>
+
+            <!-- item 2 -->
+            <div class="relative">
+              <p class="text-[#ff6900] text-sm font-semibold">Call Us</p>
+              <p
+                class="mt-3 text-2xl font-extrabold hover:text-orange-500 cursor-pointer"
+              >
+                +1 800 2345 6789
+              </p>
+
+              <!-- divider -->
+              <span
+                class="hidden md:block absolute right-[-20px] top-1/2 -translate-y-1/2 h-10 w-px bg-white/10"
+              ></span>
+            </div>
+
+            <!-- item 3 -->
+            <div>
+              <p class="text-[#ff6900] text-sm font-semibold">Our Location</p>
+              <p
+                class="mt-3 text-2xl font-extrabold hover:text-orange-500 cursor-pointer"
+              >
+                #2354, Beverly Hills, LA
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="relative bg-[#1a1a1a] text-white pt-16 pb-25">
+      <div class="mx-auto max-w-7xl px-6 lg:px-10">
+        <div class="grid gap-12 lg:grid-cols-4">
+          <!-- Office -->
+          <div>
+            <h3 class="text-xl font-extrabold">Office</h3>
+            <span
+              class="mt-3 block h-[3px] w-7 rounded-full bg-[#ff6900]"
+            ></span>
+
+            <ul class="mt-8 space-y-4 text-white/70">
+              <li class="group flex gap-3">
+                <span
+                  class="mt-0.5 grid h-10 w-10 place-items-center rounded-full bg-white text-[#ff6900] transition-transform duration-300 transform-gpu group-hover:scale-110 hover:bg-orange-600 hover:text-white"
+                >
+                  <i class="fa-solid fa-location-dot"></i>
+                </span>
+                <span class="leading-7">121 King Street, NewYork</span>
+              </li>
+
+              <li class="group flex gap-3">
+                <span
+                  class="mt-0.5 grid h-10 w-10 place-items-center rounded-full bg-white text-[#ff6900] transition-transform duration-300 transform-gpu group-hover:scale-110 hover:bg-orange-600 hover:text-white"
+                >
+                  <i class="fa-solid fa-phone"></i>
+                </span>
+                <span class="leading-7">+1 (800) 333 44 55</span>
+              </li>
+
+              <li class="group flex gap-3">
+                <span
+                  class="mt-0.5 grid h-10 w-10 place-items-center rounded-full bg-white text-[#ff6900] transition-transform duration-300 transform-gpu group-hover:scale-110 hover:bg-orange-600 hover:text-white"
+                >
+                  <i class="fa-solid fa-envelope"></i>
+                </span>
+                <span class="leading-7">xtrabike@gmail.com</span>
+              </li>
+
+              <li class="group flex gap-3">
+                <span
+                  class="mt-0.5 grid h-10 w-10 place-items-center rounded-full bg-white text-[#ff6900] transition-transform duration-300 transform-gpu group-hover:scale-110 hover:bg-orange-600 hover:text-white"
+                >
+                  <i class="fa-solid fa-phone-volume"></i>
+                </span>
+                <span class="leading-7">+1 (800) 333 99 88</span>
+              </li>
+
+              <li class="group flex gap-3">
+                <span
+                  class="mt-0.5 grid h-10 w-10 place-items-center rounded-full bg-white text-[#ff6900] transition-transform duration-300 transform-gpu group-hover:scale-110 hover:bg-orange-600 hover:text-white"
+                >
+                  <i class="fa-brands fa-x-twitter"></i>
+                </span>
+                <span class="leading-7">@xtra_bikeshop</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- News -->
+          <div>
+            <h3 class="text-xl font-extrabold">News</h3>
+            <span
+              class="mt-3 block h-[3px] w-7 rounded-full bg-[#ff6900]"
+            ></span>
+
+            <div class="mt-8 space-y-6">
+              <!-- post 1 -->
+              <article class="flex gap-4">
+                <!-- Image hover like screenshot 1 -->
+                <a
+                  href="#"
+                  class="group relative h-[68px] w-[68px] shrink-0 rounded-xl overflow-hidden"
+                >
+                  <img
+                    src="assets/imgs/post1-1.jpg"
+                    alt=""
+                    class="h-14 w-14 rounded-xl object-cover transition duration-300 group-hover:scale-105"
+                  />
+
+                  <!-- dark overlay -->
+                  <span
+                    class="absolute inset-0 bg-black/0 transition duration-300 group-hover:bg-black/55"
+                    aria-hidden="true"
+                  ></span>
+
+                  <!-- chain icon -->
+                  <span
+                    class="absolute inset-0 grid place-items-center opacity-0 scale-90 transition duration-300 group-hover:opacity-100 group-hover:scale-100"
+                    aria-hidden="true"
+                  >
+                    <i class="fa-solid fa-link text-[#ff6900] text-lg"></i>
+                  </span>
+                </a>
+
+                <!-- Text hover like screenshot 2 -->
+                <div class="min-w-0">
+                  <a
+                    href="#"
+                    class="block font-extrabold leading-6 text-white transition-colors duration-300 hover:text-[#ff6900]"
+                    title="Top 7 Must have Accessories for..."
+                  >
+                    Top 7 Must have Accessories for...
+                  </a>
+
+                  <div
+                    class="mt-2 flex items-center gap-3 text-sm text-white/50"
+                  >
+                    <span class="flex items-center gap-2">
+                      <i class="fa-regular fa-clock"></i> 10 June 2024
+                    </span>
+                    <span class="flex items-center gap-2">
+                      <i class="fa-regular fa-comment-dots"></i> 20
+                    </span>
+                  </div>
+                </div>
+              </article>
+
+              <!-- divider line -->
+              <div class="h-px w-full bg-white/10"></div>
+
+              <!-- post 2 -->
+              <article class="flex gap-4">
+                <!-- Image hover -->
+                <a
+                  href="#"
+                  class="group relative h-[68px] w-[68px] shrink-0 rounded-xl overflow-hidden"
+                >
+                  <img
+                    src="assets/imgs/post2-1.jpg"
+                    alt=""
+                    class="h-14 w-14 rounded-xl object-cover duration-300 group-hover:scale-105"
+                  />
+
+                  <span
+                    class="absolute inset-0 bg-black/0 transition duration-300 group-hover:bg-black/55"
+                    aria-hidden="true"
+                  ></span>
+
+                  <span
+                    class="absolute inset-0 grid place-items-center opacity-0 scale-90 transition duration-300 group-hover:opacity-100 group-hover:scale-100"
+                    aria-hidden="true"
+                  >
+                    <i class="fa-solid fa-link text-[#ff6900] text-lg"></i>
+                  </span>
+                </a>
+
+                <!-- Text hover -->
+                <div class="min-w-0">
+                  <a
+                    href="#"
+                    class="block font-extrabold leading-6 text-white transition-colors duration-300 hover:text-[#ff6900]"
+                    title="How to Choose the Perfect Bike for Yo..."
+                  >
+                    How to Choose the Perfect Bike for Yo...
+                  </a>
+
+                  <div
+                    class="mt-2 flex items-center gap-3 text-sm text-white/50"
+                  >
+                    <span class="flex items-center gap-2">
+                      <i class="fa-regular fa-clock"></i> 10 June 2024
+                    </span>
+                    <span class="flex items-center gap-2">
+                      <i class="fa-regular fa-comment-dots"></i> 12
+                    </span>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+
+          <!-- Shortcuts -->
+          <div>
+            <h3 class="text-xl font-extrabold">Shortcuts</h3>
+            <span
+              class="mt-3 block h-[3px] w-7 rounded-full bg-[#ff6900]"
+            ></span>
+
+            <div class="mt-8 grid grid-cols-2 gap-x-10 gap-y-3 text-white/70">
+              <a
+                href="#"
+                class="group flex items-center gap-2 transition-all duration-300 hover:translate-x-2 hover:text-[#ff6900]"
+              >
+                <i
+                  class="fa-solid fa-angle-right text-white/40 transition-colors duration-300 group-hover:text-[#ff6900]"
+                ></i>
+                <span>Home</span>
+              </a>
+
+              <a
+                href="#"
+                class="group flex items-center gap-2 transition-all duration-300 hover:translate-x-2 hover:text-[#ff6900]"
+              >
+                <i
+                  class="fa-solid fa-angle-right text-white/40 transition-colors duration-300 group-hover:text-[#ff6900]"
+                ></i>
+                <span>Maps</span>
+              </a>
+
+              <a
+                href="#"
+                class="group flex items-center gap-2 transition-all duration-300 hover:translate-x-2 hover:text-[#ff6900]"
+              >
+                <i
+                  class="fa-solid fa-angle-right text-white/40 transition-colors duration-300 group-hover:text-[#ff6900]"
+                ></i>
+                <span>City Store</span>
+              </a>
+
+              <a
+                href="#"
+                class="group flex items-center gap-2 transition-all duration-300 hover:translate-x-2 hover:text-[#ff6900]"
+              >
+                <i
+                  class="fa-solid fa-angle-right text-white/40 transition-colors duration-300 group-hover:text-[#ff6900]"
+                ></i>
+                <span>Careers</span>
+              </a>
+
+              <a
+                href="#"
+                class="group flex items-center gap-2 transition-all duration-300 hover:translate-x-2 hover:text-[#ff6900]"
+              >
+                <i
+                  class="fa-solid fa-angle-right text-white/40 transition-colors duration-300 group-hover:text-[#ff6900]"
+                ></i>
+                <span>News</span>
+              </a>
+
+              <a
+                href="#"
+                class="group flex items-center gap-2 transition-all duration-300 hover:translate-x-2 hover:text-[#ff6900]"
+              >
+                <i
+                  class="fa-solid fa-angle-right text-white/40 transition-colors duration-300 group-hover:text-[#ff6900]"
+                ></i>
+                <span>Employees</span>
+              </a>
+
+              <a
+                href="#"
+                class="group flex items-center gap-2 transition-all duration-300 hover:translate-x-2 hover:text-[#ff6900]"
+              >
+                <i
+                  class="fa-solid fa-angle-right text-white/40 transition-colors duration-300 group-hover:text-[#ff6900]"
+                ></i>
+                <span>Clients</span>
+              </a>
+
+              <a
+                href="#"
+                class="group flex items-center gap-2 transition-all duration-300 hover:translate-x-2 hover:text-[#ff6900]"
+              >
+                <i
+                  class="fa-solid fa-angle-right text-white/40 transition-colors duration-300 group-hover:text-[#ff6900]"
+                ></i>
+                <span>Teams</span>
+              </a>
+
+              <a
+                href="#"
+                class="group flex items-center gap-2 transition-all duration-300 hover:translate-x-2 hover:text-[#ff6900]"
+              >
+                <i
+                  class="fa-solid fa-angle-right text-white/40 transition-colors duration-300 group-hover:text-[#ff6900]"
+                ></i>
+                <span>Consultation</span>
+              </a>
+
+              <a
+                href="#"
+                class="group flex items-center gap-2 transition-all duration-300 hover:translate-x-2 hover:text-[#ff6900]"
+              >
+                <i
+                  class="fa-solid fa-angle-right text-white/40 transition-colors duration-300 group-hover:text-[#ff6900]"
+                ></i>
+                <span>Benefits</span>
+              </a>
+
+              <a
+                href="#"
+                class="group flex items-center gap-2 transition-all duration-300 hover:translate-x-2 hover:text-[#ff6900]"
+              >
+                <i
+                  class="fa-solid fa-angle-right text-white/40 transition-colors duration-300 group-hover:text-[#ff6900]"
+                ></i>
+                <span>Publicity</span>
+              </a>
+
+              <a
+                href="#"
+                class="group flex items-center gap-2 transition-all duration-300 hover:translate-x-2 hover:text-[#ff6900]"
+              >
+                <i
+                  class="fa-solid fa-angle-right text-white/40 transition-colors duration-300 group-hover:text-[#ff6900]"
+                ></i>
+                <span>Privacy</span>
+              </a>
+
+              <a
+                href="#"
+                class="group flex items-center gap-2 transition-all duration-300 hover:translate-x-2 hover:text-[#ff6900]"
+              >
+                <i
+                  class="fa-solid fa-angle-right text-white/40 transition-colors duration-300 group-hover:text-[#ff6900]"
+                ></i>
+                <span>Support</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Working Hours -->
+          <div>
+            <h3 class="text-xl font-extrabold">Working Hours</h3>
+            <span
+              class="mt-3 block h-[3px] w-7 rounded-full bg-[#ff6900]"
+            ></span>
+
+            <p class="mt-8 text-white/65 leading-7">
+              Our support available to help you 24 hours a day, seven days a
+              week.
+            </p>
+
+            <div class="mt-8 space-y-4 text-white/80">
+              <div class="flex items-center justify-between gap-4">
+                <span class="font-bold mr-1">Monday to Friday</span>
+                <span class="text-orange-900 ml-[-20px] text-xs pt-4"
+                  >-----</span
+                >
+                <span class="text-white/60">8AM – 4PM</span>
+              </div>
+
+              <div class="flex items-center justify-between gap-4">
+                <span class="font-bold">Saturday</span>
+                <span class="text-orange-900 ml-[-10px] text-xs pt-4"
+                  >--------------</span
+                >
+                <span class="text-white/60">8AM – 1PM</span>
+              </div>
+
+              <div class="flex items-center justify-between gap-4">
+                <span class="font-bold">Sunday</span>
+                <span class="text-orange-900 ml-[-20px] text-xs pt-4"
+                  >-------------------</span
+                >
+                <span class="text-white/60">Closed</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- bottom bar -->
+      <div
+        class="bg-[#202020] px-30 py-5 mt-14 border-t border-white/10 pt-6 flex flex-col gap-4 md:flex-row md:items-center md:justify-between absolute bottom-0 right-0 left-0"
+      >
+        <p class="text-white/50 text-sm">
+          Copyright © 2026 Xtra Theme. All Rights Reserved.
+        </p>
+
+        <!-- payment icons  -->
+        <div class="flex items-center gap-3 text-white/40 text-2xl">
+          <img
+            src="/assets/imgs/payment.png"
+            alt="payment"
+            class="w-[250px] h-full"
+          />
+        </div>
+      </div>
+    </footer>
+
+    <!-- Floating Email Button -->
+    <a
+      href="mailto:support@example.com"
+      class="fixed bottom-8 right-8 z-[999] w-10 h-10 rounded-full bg-[#ff6900] text-white flex items-center justify-center shadow-2xl hover:scale-110 hover:bg-white hover:text-orange-500 transition-all duration-300"
+      aria-label="Email"
+    >
+      <i class="fa-solid fa-envelope text-lg"></i>
+    </a>
+
+    <!-- Cookie Bar -->
+    <div
+      id="cookieBar"
+      class="fixed bottom-8 left-13 z-[998] bg-white text-white rounded-full px-2 py-3 flex items-center gap-4 shadow-2xl"
+    >
+      <!-- Cookie Icon -->
+      <div
+        class="w-9 h-9 rounded-full bg-[#fff] flex items-center justify-center text-orange-500"
+      >
+        <i class="fa-solid fa-cookie-bite"></i>
+      </div>
+
+      <span class="text-sm text-gray-700">
+        This website uses cookies to improve user experience.
+      </span>
+
+      <button
+        id="acceptCookies"
+        class="bg-[#ff6900] text-white px-5 py-3 rounded-full text-sm font-bold hover:bg-white hover:text-orange-500 transition"
+      >
+        Accept and close
+      </button>
+    </div>
+
+    <!-- CHAT WIDGET (bottom-left) -->
+    <div class="fixed bottom-5 left-5 z-[997]">
+      <!-- Floating Button -->
+      <button
+        id="chatBtn"
+        class="w-16 h-16 rounded-full bg-[#f7b500] flex items-center justify-center shadow-2xl hover:scale-105 transition"
+        aria-label="Toggle chat"
+      >
+        <i
+          id="chatIcon"
+          class="fa-regular fa-comment-dots text-2xl text-black"
+        ></i>
+        <i
+          id="chatArrow"
+          class="fa-solid fa-chevron-down text-2xl text-black"
+          style="display: none"
+        ></i>
+      </button>
+
+      <!-- Chat Panel -->
+      <div
+        id="chatPanel"
+        class="absolute bottom-[70px] left-0 w-[320px] h-[520px] rounded-[28px] overflow-hidden bg-white shadow-2xl opacity-0 pointer-events-none translate-y-2 transition-all duration-300"
+      >
+        <!-- BODY -->
+        <div id="chatHome" class="p-5 bg-[#f7b500] py-45">
+          <p class="text-sm text-black/70">
+            We are live and ready to chat with you now. Say something to start a
+            live chat.
+          </p>
+
+          <!-- New Conversation Card -->
+          <button
+            id="newConversation"
+            class="mt-5 w-full text-left bg-white rounded-2xl border border-black/10 p-4 shadow-sm hover:shadow-md transition"
+          >
+            <div class="flex items-center justify-between">
+              <div>
+                <p class="font-bold text-black">New Conversation</p>
+                <p class="text-xs text-black/50 mt-1">
+                  We typically reply in a few minutes
+                </p>
+              </div>
+              <i class="fa-solid fa-paper-plane text-black/40"></i>
+            </div>
+          </button>
+        </div>
+
+        <!-- MESSAGES VIEW -->
+        <div id="chatMessages" class="hidden h-[calc(520px-72px-78px)]">
+          <!-- header inside messages -->
+          <div
+            class="bg-[#f7b500] px-5 py-4 flex items-center justify-between relative"
+          >
+            <div class="flex items-center gap-3">
+              <button
+                id="backToHome"
+                class="text-black/80 hover:text-black transition"
+              >
+                <i class="fa-solid fa-arrow-left text-lg"></i>
+              </button>
+              <p class="font-bold text-black">Messages</p>
+            </div>
+
+            <!-- Menu button -->
+            <button
+              id="chatMenuBtn"
+              class="w-10 h-10 rounded-full bg-black/10 hover:bg-black/20 transition flex items-center justify-center text-black"
+              aria-label="Chat menu"
+            >
+              <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <!-- Dropdown -->
+            <div
+              id="chatMenu"
+              class="absolute top-[72px] right-5 w-[230px] bg-white rounded-2xl shadow-2xl border border-black/10 p-2 opacity-0 pointer-events-none translate-y-2 transition-all duration-200 z-[999]"
+            >
+              <button
+                class="w-full flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-black/5 text-left"
+              >
+                <i class="fa-regular fa-pen-to-square"></i>
+                <span class="text-sm font-medium">Change Name</span>
+              </button>
+
+              <button
+                class="w-full flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-black/5 text-left"
+              >
+                <i class="fa-regular fa-envelope"></i>
+                <span class="text-sm font-medium">Email transcript</span>
+              </button>
+
+              <button
+                id="soundToggle"
+                class="w-full flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-black/5 text-left"
+              >
+                <i id="soundIcon" class="fa-solid fa-volume-xmark"></i>
+                <span id="soundText" class="text-sm font-medium"
+                  >Sound Off</span
+                >
+              </button>
+
+              <button
+                class="w-full flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-black/5 text-left"
+              >
+                <i class="fa-solid fa-up-right-from-square"></i>
+                <span class="text-sm font-medium">Pop out widget</span>
+              </button>
+
+              <button
+                class="w-full flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-black/5 text-left"
+              >
+                <i class="fa-regular fa-comment"></i>
+                <span class="text-sm font-medium"
+                  >Add Chat to your website</span
+                >
+              </button>
+            </div>
+          </div>
+
+          <div class="p-5">
+            <p class="text-black font-semibold">Start a new chat</p>
+
+            <button
+              class="mt-4 w-full text-left bg-white rounded-2xl border border-[#f7b500]/70 p-4 shadow-sm hover:shadow-md transition"
+            >
+              <div class="flex items-center justify-between">
+                <div>
+                  <p class="font-bold text-black">New Conversation</p>
+                  <p class="text-xs text-black/50 mt-1">
+                    We typically reply in a few minutes
+                  </p>
+                </div>
+                <i class="fa-solid fa-paper-plane text-[#f7b500]"></i>
+              </div>
+            </button>
+
+            <div class="mt-8">
+              <p class="text-black font-semibold">Recent</p>
+              <p class="text-sm text-black/40 mt-3">No recent conversations</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- BOTTOM TABS -->
+        <div
+          class="absolute bottom-0 left-0 w-full bg-white border-t border-black/10"
+        >
+          <div class="flex">
+            <button
+              id="tabHome"
+              class="flex-1 py-4 flex items-center justify-center gap-2 text-[#f7b500] font-bold"
+            >
+              <i class="fa-solid fa-house"></i>
+            </button>
+
+            <button
+              id="tabMessages"
+              class="flex-1 py-4 flex items-center justify-center gap-2 text-black/40 hover:text-black transition"
+            >
+              <i class="fa-regular fa-message"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="JS/script.js"></script>
+  </body>
+</html>
